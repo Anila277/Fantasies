@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
 
-function Index() {
-    return(
-        <h1>Index Page</h1>
-    )
+import {useState} from 'react';
+function index () {
+    <div> 
+        <h1>Hello World</h1>
+    </div>
 }
 
-export default Index;
