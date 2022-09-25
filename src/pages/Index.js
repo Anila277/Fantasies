@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {useState} from 'react'
 
 
@@ -14,7 +15,9 @@ function Index (props) {
             <div className= 'poem' key={poem._id} >
 
                 <h2>
+                    <Link to={`/poem/${poem._id}`}>
                     {poem.name}
+                    </Link>
                     </h2> 
                 
                     <img className='limiter'
@@ -27,7 +30,7 @@ function Index (props) {
     };
 
     const loading = () => {
-        return <h1> Loading.....</h1>
+        return <h1> Poems On The Way </h1>
     };
     const handleChange = (e) => {
         setNewForm({
@@ -50,7 +53,6 @@ function Index (props) {
 
     return(
         <section>
-            <h1> Welcome to Fantasies</h1>
             <form onSubmit={handleSubmit}>
                 <lable>
                     Name
