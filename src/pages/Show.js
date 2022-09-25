@@ -1,4 +1,4 @@
-import {usestate, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 
 function Show ({poems, deletePoems, updatePoems}) {
@@ -8,6 +8,27 @@ function Show ({poems, deletePoems, updatePoems}) {
 const poem = poems ? poems.find(p => p._id === id): null;
 
 const navigate = useNavigate();
+
+const [editForm, setEditForm] = useState({
+        name: '',
+        image: '',
+        title: ''
+    });
+
+const [isEditing, setIsEditing] = useState(false);
+
+const handleChange = (e) => {
+    setEditForm({
+        ...editForm,
+        [e.target.name]: e.target.value
+    });
+};
+
+const handleSubmit = (e) => {
+   e.preventDefault()
+        updatePoems(editForm, id);
+        setIsEditing(false);
+    };
 
 
 const loading = () => {
@@ -22,6 +43,10 @@ const handleDelete = () => {
     navigate('/');
 };
 
+const handleEdit = () => {
+    setIsEditing(prevState => !prevState)
+};
+
 return (
     <section>
         <h1>{poem.name}</h1>
@@ -30,19 +55,59 @@ return (
         alt={poem.name}
         />
         <p>{poem.title}</p>
+        <button onClick={handleEdit}>{isEditing ? 'Cancel Edit' : 'Edit'}</button>
         <button onClick={handleDelete}>Delete</button>
     </section>
 )
 
 };
-
-// useEffect (() =>{
-//     getData();
-//   }, []);
+useEffect(() => {
+    if(poem) {
+        setEditForm(poem);
+    }
+}, [poem]);
 
   return (
     <section>
         {poems ? loaded() : loading()}
+        { isEditing &&
+        <form onSubmit={handleSubmit}>
+            <lable>
+                    Name:
+                    <input
+                    type='text'
+                    name='name'
+                    value={editForm.name}
+                    onChange={handleChange}
+                    
+                    />
+                </lable>
+                <label>
+                    image 
+                    <input 
+                    type='text' 
+                    name='image'
+                    value={editForm.image}
+                    onChange={handleChange}
+                     />
+                </label>
+                <label>
+                    title
+                    <input 
+                    type='text'
+                    name='title' 
+                    value={editForm.title}
+                    onChange={handleChange}
+                    />
+                </label>
+                <label>
+                submit
+                    <input 
+                    type='submit' value='Update' />
+                </label>
+        </form>
+
+        }
     </section>
 
   );
