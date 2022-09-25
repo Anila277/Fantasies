@@ -1,8 +1,13 @@
 
 import { useState } from 'react';
-function index() {
-    <div>
-        {/* <h1>Hello World</h1> */}
-    </div>
+import { Link } from 'react-router-dom';
+
+function Index(props) {
+    return (
+        <div>
+            <h1>Hello Index page</h1>
+        </div>
+    )
 }
 
+export default Index;
