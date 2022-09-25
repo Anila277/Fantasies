@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -16,6 +17,7 @@ function Header() {
                 <div>Creators</div>
             </Link>
         </nav>
+
     );
 }
 
