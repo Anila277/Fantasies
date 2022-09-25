@@ -15,10 +15,6 @@ function Main(props) {
 
                     <Show />
                 } />
-                <Route path='/index' element={
-
-                    <Index />
-                } />
             </Routes>
         </main>
     );
