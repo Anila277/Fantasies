@@ -1,32 +1,31 @@
-
 import { Link } from 'react-router-dom';
-import {useState} from 'react'
+import { useState } from 'react'
 
 
-function Index (props) {
+function Index(props) {
     const [newForm, setNewForm] = useState({
-        name:'',
-        image:'',
-        title:'',
+        name: '',
+        image: '',
+        title: '',
     })
 
     const loaded = () => {
 
-        return props.poems.map( poem => (
-            <div className= 'poem' key={poem._id} >
+        return props.poems.map(poem => (
+            <div className='poem' key={poem._id} >
 
                 <h2>
                     <Link to={`/poems/${poem._id}`}>
-                    {poem.name}
+                        {poem.name}
                     </Link>
-                    </h2> 
-                
-                    <img className='limiter'
-                     src={poem.image}></img>
+                </h2>
+
+                <img className='limiter'
+                    src={poem.image}></img>
                 <p>{poem.title}</p>
-                
-        </div>
-        
+
+            </div>
+
         ));
     };
 
@@ -36,60 +35,60 @@ function Index (props) {
     const handleChange = (e) => {
         setNewForm({
             ...newForm,
-            [e.target.name]: e.target.value 
+            [e.target.name]: e.target.value
 
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!newForm.image) delete newForm.image
+        if (!newForm.image) delete newForm.image
         props.createPoems(newForm);
         setNewForm({
-            name:'',
-            image:'',
-            title:''
+            name: '',
+            image: '',
+            title: ''
         })
     };
 
-    return(
+    return (
         <section>
             <form onSubmit={handleSubmit}>
                 <lable>
                     Name
                     <input
-                    type='text'
-                    value={newForm.name}
-                    onChange={handleChange}
-                    name='name'
+                        type='text'
+                        value={newForm.name}
+                        onChange={handleChange}
+                        name='name'
                     />
                 </lable>
                 <label>
-                    image 
-                    <input 
-                    type='text' 
-                    value={newForm.image}
-                    onChange={handleChange}
-                    name='image' />
+                    image
+                    <input
+                        type='text'
+                        value={newForm.image}
+                        onChange={handleChange}
+                        name='image' />
                 </label>
                 <label>
                     title
-                    <input 
-                    type='text'
-                    value={newForm.title}
-                    onChange={handleChange}
-                    name='title' />
+                    <input
+                        type='text'
+                        value={newForm.title}
+                        onChange={handleChange}
+                        name='title' />
                 </label>
                 <label>
-                submit
-                    <input 
-                    type='submit' value='submit' />
+                    submit
+                    <input
+                        type='submit' value='submit' />
                 </label>
             </form>
-        {props.poems ? loaded(): loading() }
-    </section>
-)
+            {props.poems ? loaded() : loading()}
+        </section>
+    );
 
 }
-export default Index;
 
+export default Index;
