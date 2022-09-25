@@ -15,7 +15,7 @@ function Index (props) {
             <div className= 'poem' key={poem._id} >
 
                 <h2>
-                    <Link to={`/poem/${poem._id}`}>
+                    <Link to={`/poems/${poem._id}`}>
                     {poem.name}
                     </Link>
                     </h2> 
@@ -30,7 +30,7 @@ function Index (props) {
     };
 
     const loading = () => {
-        return <h1> Poems On The Way </h1>
+        return <h1> Poems On The Way... </h1>
     };
     const handleChange = (e) => {
         setNewForm({
@@ -42,7 +42,7 @@ function Index (props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(newForm.image) delete newForm.image
+        if(!newForm.image) delete newForm.image
         props.createPoems(newForm);
         setNewForm({
             name:'',

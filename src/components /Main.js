@@ -77,10 +77,11 @@ const createPoems = async (person) => {
       <Route path='/' element ={
         <Index
         poems={poems}
+        createPoems={createPoems}
         />
       } 
       />
-      <Route path ='/poem/:id' element={
+      <Route path ='/poems/:id' element={
         <Show 
         poems={poems}
         deletePoems={deletePoems}
@@ -90,7 +91,7 @@ const createPoems = async (person) => {
   </Routes>
 </main>
   );
-};
+}
 
 
 export default Main;
