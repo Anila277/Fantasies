@@ -23,6 +23,10 @@ function Main(props) {
         }
     }
 
+    useEffect(() => {
+        getData();
+    }, [])
+
     return (
         <main>
             <h1>Hello Main page</h1>
