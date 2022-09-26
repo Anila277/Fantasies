@@ -8,7 +8,7 @@ function Main (props) {
   
   const [ poems, setPoems] = useState(null);
 
-  const API_URL ='http://localhost:4000/api/people/';
+  const API_URL ='http://localhost:4000/api/poems/';
 
   const getData = async () => {
     try {
