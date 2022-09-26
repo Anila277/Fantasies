@@ -19,14 +19,14 @@ function Main (props) {
     }
     
   }
-const createPoems = async (person) => {
+const createPoems = async (peom) => {
   try{
     await fetch (API_URL, {
       method: 'POST',
       headers: {
         'Content-type': 'Application/json'
                 },
-                body: JSON.stringify(person)
+                body: JSON.stringify(poem)
       });
       getData();
 
