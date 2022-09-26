@@ -19,7 +19,7 @@ function Main (props) {
     }
     
   }
-const createPoems = async (peom) => {
+const createPoems = async (poem) => {
   try{
     await fetch (API_URL, {
       method: 'POST',
