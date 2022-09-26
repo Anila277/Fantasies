@@ -82,29 +82,29 @@ function Show({ poems, deletePoems, updatePoems }) {
 
                         />
                     </lable>
-                    <label>
-                        image
+                    <lable>
+                        Image:
                         <input
                             type='text'
                             name='image'
                             value={editForm.image}
                             onChange={handleChange}
                         />
-                    </label>
-                    <label>
-                        title
+                    </lable>
+                    <lable>
+                        Title:
                         <input
                             type='text'
                             name='title'
                             value={editForm.title}
                             onChange={handleChange}
                         />
-                    </label>
-                    <label>
-                        submit
+                    </lable>
+                    <lable>
+                        Submit:
                         <input
                             type='submit' value='Update' />
-                    </label>
+                    </lable>
                 </form>
 
             }
