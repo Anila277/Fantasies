@@ -3,6 +3,7 @@ import { Routes, Route} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Index from '../pages/Index';
 import Show from '../pages/Show';
+import About from '../pages/About'
 
 function Main (props) {
   
@@ -88,6 +89,9 @@ const createPoems = async (poem) => {
         deletePoems={deletePoems}
         updatePoems={updatePoems}
         />
+      } />
+      <Route path='/about' element={
+        <About/>
       } />
   </Routes>
 </main>
