@@ -34,13 +34,13 @@ function About(props) {
                 <br /> nesciunt, sapiente quibusdam fugiat, alias sunt pariatur, optio totam odit?
                 <br /> Aperiam ex dicta aspernatur suscipit tempora recusandae consequuntur officiis.</h3>
             <div >
-                {stars.map((_, index) => {
+                {stars.map((_, star) => {
                     return (
                         <GiFlexibleStar
-                            key={index}
-                            color={(hoverValue || currentValue) > index ? colors.green : colors.grey}
-                            onClick={() => handleClick(index + 1)}
-                            onMouseOver={() => handleMouseOver(index + 1)}
+                            key={star}
+                            color={(hoverValue || currentValue) > star ? colors.green : colors.grey}
+                            onClick={() => handleClick(star + 1)}
+                            onMouseOver={() => handleMouseOver(star + 1)}
                             onMouseLeave={handleMouseLeave}
                         />
                     )
