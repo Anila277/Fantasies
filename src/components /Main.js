@@ -11,9 +11,17 @@ function Main(props) {
         <main>
             <h1>Hello Main page</h1>
             <Routes>
+                <Route path='/' element={
+
+                    <Index />
+                } />
                 <Route path='/show' element={
 
                     <Show />
+                } />
+                <Route path='/about' element={
+
+                    <About />
                 } />
             </Routes>
         </main>
