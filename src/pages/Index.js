@@ -66,7 +66,7 @@ function Index(props) {
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <lable>
+                <label>
                     Poet:
                     <input
                         type='text'
@@ -74,7 +74,7 @@ function Index(props) {
                         onChange={handleChange}
                         name='name'
                     />
-                </lable>
+                </label>
                 <label>
                     Image:
                     <input
