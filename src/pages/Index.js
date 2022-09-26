@@ -55,7 +55,7 @@ function Index(props) {
         <section>
             <form onSubmit={handleSubmit}>
                 <lable>
-                    Name
+                    Poet:
                     <input
                         type='text'
                         value={newForm.name}
@@ -64,7 +64,7 @@ function Index(props) {
                     />
                 </lable>
                 <label>
-                    image
+                    Image:
                     <input
                         type='text'
                         value={newForm.image}
@@ -72,7 +72,7 @@ function Index(props) {
                         name='image' />
                 </label>
                 <label>
-                    title
+                    Poem Title:
                     <input
                         type='text'
                         value={newForm.title}

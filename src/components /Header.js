@@ -7,15 +7,13 @@ function Header() {
             <Link to="/about">
                 <div>About</div>
             </Link>
-            <Link to="/">
+            <Link to="/register">
                 <div>Register</div>
             </Link>
             <Link to="/signin">
                 <div>Login</div>
             </Link>
-            <Link to="/creators">
-                <div>Creators</div>
-            </Link>
+
         </nav>
 
     );
