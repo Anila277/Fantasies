@@ -31,6 +31,7 @@ function About(props) {
     };
 
     const [review, setReview] = useState("");
+
     const [reviews, setReviews] = useState([]);
 
     const onClickHandler = () => {
@@ -54,6 +55,8 @@ function About(props) {
             <h3> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim distinctio ea
                 <br /> nesciunt, sapiente quibusdam fugiat, alias sunt pariatur, optio totam odit?
                 <br /> Aperiam ex dicta aspernatur suscipit tempora recusandae consequuntur officiis.</h3>
+
+            <h2>Reviews</h2>
             <form onSubmit={handleSubmit}>
                 {stars.map((_, star) => {
                     return (
@@ -69,9 +72,6 @@ function About(props) {
 
                 <br />
 
-                {reviews.map((input) => (
-                    <div>{review}</div>
-                ))}
                 <textarea
                     placeHolder='Leave a Review'
                     value={review}
@@ -79,6 +79,11 @@ function About(props) {
                 />
                 <br />
                 <button onClick={onClickHandler}>Submit</button>
+                <div>
+                    {reviews.map((input) => (
+                        <div>{input}</div>
+                    ))}
+                </div>
             </form>
 
             <div className="profile">
