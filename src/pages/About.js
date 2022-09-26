@@ -9,6 +9,7 @@ const colors = {
 
 function About(props) {
 
+
     const stars = Array(5).fill(0);
 
     const [currentValue, setCurrentValue] = useState(0);
@@ -17,14 +18,35 @@ function About(props) {
 
     const handleClick = value => {
         setCurrentValue(value)
+
     };
+
 
     const handleMouseOver = value => {
         setHoverValue(value)
-    }
+    };
 
     const handleMouseLeave = () => {
         setHoverValue(null)
+    };
+
+    const [review, setReview] = useState("");
+
+    const [reviews, setReviews] = useState([]);
+
+    const onClickHandler = () => {
+        setReviews((reviews) => [...reviews, review]);
+
+    }
+
+    const onChangeHandler = (e) => {
+        setReview(e.target.value);
+
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
     }
 
     return (
@@ -33,7 +55,9 @@ function About(props) {
             <h3> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim distinctio ea
                 <br /> nesciunt, sapiente quibusdam fugiat, alias sunt pariatur, optio totam odit?
                 <br /> Aperiam ex dicta aspernatur suscipit tempora recusandae consequuntur officiis.</h3>
-            <div >
+
+            <h2>Reviews</h2>
+            <form onSubmit={handleSubmit}>
                 {stars.map((_, star) => {
                     return (
                         <GiFlexibleStar
@@ -46,11 +70,22 @@ function About(props) {
                     )
                 })}
 
-            </div>
-            <textarea
-                placeHolder='Leave a Review'
-            />
-            <button>Submit</button>
+                <br />
+
+                <textarea
+                    placeHolder='Leave a Review'
+                    value={review}
+                    onChange={onChangeHandler}
+                />
+                <br />
+                <button onClick={onClickHandler}>Submit</button>
+                <div>
+                    {reviews.map((input) => (
+                        <div>{input}</div>
+                    ))}
+                </div>
+            </form>
+
             <div className="profile">
                 <h1>About Our Team</h1>
                 <h3>Ben Allen</h3>
