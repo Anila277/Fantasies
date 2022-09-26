@@ -11,8 +11,13 @@ function Show({ poems, deletePoems, updatePoems }) {
 
     const [editForm, setEditForm] = useState({
         name: '',
-        image: '',
-        title: ''
+        content: '',
+        author: '',
+        user: '',
+        tags: [],
+        comments: [],
+        likes: 0,
+        dislikes: 0,
     });
 
     const [isEditing, setIsEditing] = useState(false);
@@ -54,7 +59,7 @@ function Show({ poems, deletePoems, updatePoems }) {
                     src={poem.image}
                     alt={poem.name}
                 />
-                <p>{poem.title}</p>
+                <p>{poem.content}</p>
                 <button onClick={handleEdit}>{isEditing ? 'Cancel Edit' : 'Edit'}</button>
                 <button onClick={handleDelete}>Delete</button>
             </section>
@@ -72,7 +77,7 @@ function Show({ poems, deletePoems, updatePoems }) {
             {poems ? loaded() : loading()}
             {isEditing &&
                 <form onSubmit={handleSubmit}>
-                    <lable>
+                    <label>
                         Name:
                         <input
                             type='text'
@@ -81,8 +86,8 @@ function Show({ poems, deletePoems, updatePoems }) {
                             onChange={handleChange}
 
                         />
-                    </lable>
-                    <lable>
+                    </label>
+                    <label>
                         Image:
                         <input
                             type='text'
@@ -90,23 +95,22 @@ function Show({ poems, deletePoems, updatePoems }) {
                             value={editForm.image}
                             onChange={handleChange}
                         />
-                    </lable>
-                    <lable>
+                    </label>
+                    <label>
                         Title:
                         <input
                             type='text'
-                            name='title'
-                            value={editForm.title}
+                            name='content'
+                            value={editForm.content}
                             onChange={handleChange}
                         />
-                    </lable>
-                    <lable>
+                    </label>
+                    <label>
                         Submit:
                         <input
                             type='submit' value='Update' />
-                    </lable>
+                    </label>
                 </form>
-
             }
         </section>
 

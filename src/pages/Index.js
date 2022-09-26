@@ -6,7 +6,13 @@ function Index(props) {
     const [newForm, setNewForm] = useState({
         name: '',
         image: '',
-        title: '',
+        content: '',
+        author: '',
+        user: '',
+        tags: [],
+        comments: [],
+        likes: 0,
+        dislikes: 0,
     })
 
     const loaded = () => {
@@ -21,7 +27,7 @@ function Index(props) {
                 </h2>
 
                 <img className='limiter'
-                    src={poem.image}></img>
+                    src={poem.image} alt={poem.name}></img>
                 <p>{poem.title}</p>
 
             </div>
@@ -47,7 +53,13 @@ function Index(props) {
         setNewForm({
             name: '',
             image: '',
-            title: ''
+            content: '',
+            author: '',
+            user: '',
+            tags: [],
+            comments: [],
+            likes: 0,
+            dislikes: 0,
         })
     };
 
@@ -75,9 +87,9 @@ function Index(props) {
                     Poem Title:
                     <input
                         type='text'
-                        value={newForm.title}
+                        value={newForm.content}
                         onChange={handleChange}
-                        name='title' />
+                        name='content' />
                 </label>
                 <label>
                     submit
