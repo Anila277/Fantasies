@@ -50,6 +50,7 @@ function About(props) {
             <textarea
                 placeHolder='Leave a Review'
             />
+            <button>Submit</button>
         </div>
     )
 }
