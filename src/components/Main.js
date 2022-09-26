@@ -23,6 +23,20 @@ function Main(props) {
         }
     }
 
+    const createPoems = async (poems) => {
+        try {
+            await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'Application/json'
+                },
+                body: JSON.stringify(poems)
+            })
+        } catch (error) {
+            // TODO handle errors
+        }
+    }
+
     useEffect(() => {
         getData();
     }, [])
@@ -34,6 +48,7 @@ function Main(props) {
                 <Route path='/' element={
                     <Index 
                         poems={poems}
+                        createPoems={createPoems}
                     />
                 } />
                 <Route path='/poems/:id' element={
