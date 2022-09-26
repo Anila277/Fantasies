@@ -13,9 +13,7 @@ function Header() {
             <Link to="/signin">
                 <div>Login</div>
             </Link>
-            <Link to="/profile">
-                <div>Creators</div>
-            </Link>
+
         </nav>
 
     );
