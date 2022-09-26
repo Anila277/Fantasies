@@ -47,7 +47,9 @@ function About(props) {
                 })}
 
             </div>
-
+            <textarea
+                placeHolder='Leave a Review'
+            />
         </div>
     )
 }
