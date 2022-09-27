@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 
 function Index(props) {
+
     const [newForm, setNewForm] = useState({
         name: '',
         image: '',
@@ -14,6 +15,8 @@ function Index(props) {
         likes: 0,
         dislikes: 0,
     })
+
+    if (!props.user) return <h1>Please Login to see your data.</h1>;
 
     const loaded = () => {
 
