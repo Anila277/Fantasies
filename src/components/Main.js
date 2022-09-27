@@ -8,10 +8,9 @@ import About from '../pages/About';
 
 function PrivatePageContainer({ children, user }) {
     return user ? children : <Navigate to='/' />
-
 }
 
-function Main(props) {
+function Main({ user }) {
     const [poems, setPoems] = useState(null);
 
     const API_URL = 'http://localhost:4000/api/poems'
@@ -57,9 +56,11 @@ function Main(props) {
                     />
                 } />
                 <Route path='/poems/:id' element={
-                    <Show
-                        poems={poems}
-                    />
+                    <PrivatePageContainer user={user}>
+                        <Show
+                            poems={poems}
+                        />
+                    </PrivatePageContainer>
                 } />
                 <Route path='/about' element={
                     <About />
