@@ -1,10 +1,27 @@
 import { useState, useEffect } from 'react';
+import { BsHeartFill } from 'react-icons/bs';
+
 
 import { useParams, useNavigate } from 'react-router-dom';
 function Show({ poems, deletePoems, updatePoems, user }) {
     const { id } = useParams();
     const poem = poems ? poems.find(p => p._id === id) : null;
     const navigate = useNavigate();
+
+
+    const [likes, setLikes] = useState(0);
+    const [isClicked, setIsClicked] = useState(null);
+
+    const likeButton = () => {
+        if (isClicked) {
+            setLikes(likes - 1);
+        } else {
+            setLikes(likes + 1);
+        }
+        setIsClicked(!isClicked)
+    }
+
+
     const [editForm, setEditForm] = useState({
         name: '',
         content: '',
@@ -18,7 +35,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
 
     const [isEditing, setIsEditing] = useState(false);
 
-    
+
     const handleEdit = () => {
         setIsEditing(prevState => !prevState)
     };
@@ -78,32 +95,38 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                 <img className='limiter'
                     src={poem.image}
                     alt={poem.name}
-                    />
-                    <p>{poem.author}</p>
+                />
+                <p>{poem.author}</p>
                 <p>{poem.content}</p>
                 <p>{poem.tags}</p>
                 
                 {poem.user === user.userName ?
                     <span>
-                    <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
-                    <button onClick={handleConfirm}>Delete</button>
-                    </span> : 
+                        <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
+                        <button onClick={handleConfirm}>Delete</button>
+                    </span> :
                     <span></span>
 
                 }
+
+                <span className="likes-counter">{`${likes}`}</span> <br />
+                <BsHeartFill className={`like-button ${isClicked && 'liked'}`} onClick={likeButton} />
+
+
+                <br />
                 <form onSubmit={handleComment}>
-                        <label>
-                            <input 
-                                type='text'
-                                name='comment'
-                                value={editForm.comment}
-                                onChange={handleChange}
-                            />
-                        </label>
-                        <label>
-                            <input type='submit' value='Post Comment' />
-                        </label>
-                    </form>
+                    <label>
+                        <input
+                            type='text'
+                            name='comment'
+                            value={editForm.comments}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        <input type='submit' value='Post Comment' />
+                    </label>
+                </form>
             </section>
         )
     };
