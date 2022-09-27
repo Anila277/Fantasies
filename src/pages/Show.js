@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { useParams, useNavigate } from 'react-router-dom';
-function Show({ poems, deletePoems, updatePoems }) {
+function Show({ poems, deletePoems, updatePoems, user }) {
     const { id } = useParams();
     const poem = poems ? poems.find(p => p._id === id) : null;
     const navigate = useNavigate();
@@ -18,6 +18,7 @@ function Show({ poems, deletePoems, updatePoems }) {
 
     const [isEditing, setIsEditing] = useState(false);
 
+    
     const handleEdit = () => {
         setIsEditing(prevState => !prevState)
     };
@@ -26,6 +27,11 @@ function Show({ poems, deletePoems, updatePoems }) {
         deletePoems(poem._id)
         navigate('/');
     };
+
+    const handleComment = () => {
+        // push the comment input to the end of the comment array
+        updatePoems(editForm, id);
+    }
 
     const handleChange = (e) => {
         setEditForm({
@@ -61,10 +67,33 @@ function Show({ poems, deletePoems, updatePoems }) {
                 <img className='limiter'
                     src={poem.image}
                     alt={poem.name}
-                />
+                    />
+                    <p>{poem.author}</p>
                 <p>{poem.content}</p>
-                <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
-                <button onClick={handleConfirm}>Delete</button>
+                <p>Posted By: {poem.user}</p>
+                <p>{poem.tags}</p>
+                <p>{poem.comments}</p>
+                {poem.user === user.userName ?
+                    <span>
+                    <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
+                    <button onClick={handleConfirm}>Delete</button>
+                    </span> : 
+                    <span></span>
+
+                }
+                <form onSubmit={handleComment}>
+                        <label>
+                            <input 
+                                type='text'
+                                name='comment'
+                                value={editForm.comment}
+                                onChange={handleChange}
+                            />
+                        </label>
+                        <label>
+                            <input type='submit' value='Post Comment' />
+                        </label>
+                    </form>
             </section>
         )
 
