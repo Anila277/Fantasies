@@ -31,7 +31,7 @@ function Main({ user }) {
             const data = await response.json();
             setPoems(data);
         } catch (error) {
-            console.log(error);
+            console.log('check that your backend is running' + error);
             // TODO add logic to alert the user that something went wrong
 
         }
@@ -49,7 +49,8 @@ function Main({ user }) {
                     'Authorization': 'Bearer ' + token
                 },
                 body: JSON.stringify(poems)
-            })
+            });
+            getData();
         } catch (error) {
             // TODO handle errors
         }

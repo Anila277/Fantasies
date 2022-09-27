@@ -9,7 +9,7 @@ function Index(props) {
         image: '',
         content: '',
         author: '',
-        user: '',
+        createdByUser: '',
         tags: [],
         comments: [],
         likes: 0,
@@ -32,6 +32,7 @@ function Index(props) {
                 <img className='limiter'
                     src={poem.image} alt={poem.name}></img>
                 <p>{poem.title}</p>
+                <p>{poem.content}</p>
 
             </div>
 
@@ -51,13 +52,12 @@ function Index(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!newForm.image) delete newForm.image
         props.createPoems(newForm);
         setNewForm({
             name: '',
             content: '',
             author: '',
-            user: '',
+            createdByUser: '',
             tags: [],
             comments: [],
             likes: 0,
@@ -78,14 +78,6 @@ function Index(props) {
                     />
                 </label>
                 <label>
-                    Content:
-                    <input
-                        type='text'
-                        value={newForm.content}
-                        onChange={handleChange}
-                        name='content' />
-                </label>
-                <label>
                     Author:
                     <input
                         type='text'
@@ -95,12 +87,20 @@ function Index(props) {
                     />
                 </label>
                 <label>
-                    <input
-                        hidden
+                    Content:
+                    <textarea
                         type='text'
-                        value={props.user.displayName}
+                        value={newForm.content}
                         onChange={handleChange}
-                        name='user'
+                        name='content' />
+                </label>
+                <label>
+                    <input
+                        // hidden
+                        type='text'
+                        value={newForm.createdByUser}
+                        onChange={handleChange}
+                        name='createdByUser'
                     />
                 </label>
                 <label>
