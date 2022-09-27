@@ -56,7 +56,7 @@ function About(props) {
                 <br /> after much thought realized their shared love of poetry. So, they descided
                 <br /> that they would make a place where Poets can share their work with the world. 
                 <br /> as well as a place where they can easily peruse the classics and take
-                <be /> inspiration from the poets of the past </h3>
+                <be /> inspiration from the poets of the past.</h3>
 
             <h2>Reviews</h2>
             <form onSubmit={handleSubmit}>
