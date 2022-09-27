@@ -16,8 +16,18 @@ function Main({ user }) {
     const API_URL = 'http://localhost:4000/api/poems'
 
     const getData = async () => {
+
+        if (!user) return; // do not run this function unless a user is logged in
+
         try {
-            const response = await fetch(API_URL);
+
+            const token = await user.getIdToken();
+            const response = await fetch(API_URL, {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
             const data = await response.json();
             setPoems(data);
         } catch (error) {
