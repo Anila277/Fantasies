@@ -1,4 +1,4 @@
-
+import { login, logout } from '../firebase'
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -7,12 +7,10 @@ function Header() {
             <Link to="/about">
                 <div>About</div>
             </Link>
-            <Link to="/register">
-                <div>Register</div>
-            </Link>
-            <Link to="/signin">
-                <div>Login</div>
-            </Link>
+            <section>
+                <div onClick={login}>Login</div>
+                <div onClick={logout}>Logout</div>
+            </section>
 
         </nav>
 
