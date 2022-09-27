@@ -114,6 +114,7 @@ function Main({ user }) {
                     <PrivatePageContainer user={user}>
                         <Show
                             poems={poems}
+                            user={user}
                             deletePoems={deletePoems}
                             updatePoems={updatePoems}
                         />
