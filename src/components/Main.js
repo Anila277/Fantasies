@@ -38,11 +38,15 @@ function Main({ user }) {
     }
 
     const createPoems = async (poems) => {
+        if (!user) return;
+
         try {
+            const token = await user.getIdToken();
             await fetch(API_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'Application/json'
+                    'Content-type': 'Application/json',
+                    'Authorization': 'Bearer ' + token
                 },
                 body: JSON.stringify(poems)
             })
