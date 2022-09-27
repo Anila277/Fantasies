@@ -56,27 +56,27 @@ function About(props) {
             <h1>About Fantasies: Poetry Escape</h1>
             <h3> Fantasies: Poetry Escape is the brain child of 4 GA Programming Students who,
                 <br /> after much thought realized their shared love of poetry. So, they descided
-                <br /> that they would make a place where Poets can share their work with the world. 
+                <br /> that they would make a place where Poets can share their work with the world.
                 <br /> as well as a place where they can easily peruse the classics and take
                 <be /> inspiration from the poets of the past.</h3>
 
-                <div className="profile">
+            <div className="profile">
                 <h1>About Our Team</h1>
                 <br />
-                <h3>Ben Allen</h3> 
-                <p className="BenP"> The Functionality Genius<img className = "Ben" src = {require('../assets/Capture3.PNG')} alt="Ben"/></p>
+                <h3>Ben Allen</h3>
+                <p className="BenP"> The Functionality Genius<img className="Ben" src={require('../assets/Capture3.PNG')} alt="Ben" /></p>
                 <br />
                 <h3>Dudley Gamino</h3>
-                <p className="DudleyP"> The Styling Master<img className = "Dudley" src = {require('../assets/Capture.PNG')} alt="Dudley"/></p>
+                <p className="DudleyP"> The Styling Master<img className="Dudley" src={require('../assets/Capture.PNG')} alt="Dudley" /></p>
                 <br />
                 <h3>Samuel Johnson</h3>
-                <p className="SamuelP"> The Chief Overseer<img className = "Samuel" src = {require('../assets/Capture4.PNG')} alt="Samuel"/></p>
+                <p className="SamuelP"> The Chief Overseer<img className="Samuel" src={require('../assets/Capture4.PNG')} alt="Samuel" /></p>
                 <br />
                 <h3>Anila Nisar</h3>
-                <p> The Mastermind<img className = "Anila" src = {require('../assets/Capture2.PNG')} alt="Anila"/></p>
+                <p> The Mastermind<img className="Anila" src={require('../assets/Capture2.PNG')} alt="Anila" /></p>
 
             </div>
-            
+
             <h2>Reviews</h2>
             <form onSubmit={handleSubmit}>
                 {stars.map((_, star) => {
