@@ -52,7 +52,6 @@ function Index(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!newForm.image) delete newForm.image
         props.createPoems(newForm);
         setNewForm({
             name: '',
