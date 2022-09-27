@@ -7,7 +7,7 @@ import Show from '../pages/Show';
 import About from '../pages/About';
 
 function Main(props) {
-    const [ poems, setPoems ] = useState(null);
+    const [poems, setPoems] = useState(null);
 
     const API_URL = 'http://localhost:4000/api/poems'
 
@@ -19,7 +19,7 @@ function Main(props) {
         } catch (error) {
             console.log(error);
             // TODO add logic to alert the user that something went wrong
-            
+
         }
     }
 
@@ -46,13 +46,13 @@ function Main(props) {
             <h1>Hello Main page</h1>
             <Routes>
                 <Route path='/' element={
-                    <Index 
+                    <Index
                         poems={poems}
                         createPoems={createPoems}
                     />
                 } />
                 <Route path='/poems/:id' element={
-                    <Show 
+                    <Show
                         poems={poems}
                     />
                 } />
