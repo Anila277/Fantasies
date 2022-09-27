@@ -29,8 +29,14 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 // set up login function
+function login() {
+    return signInWithPopup(auth, provider)
+}
 
 // set up logout function
+function logout() {
+    return signOut(auth)
+}
 
 // export our functionality to be used within our components
 export { auth, login, logout };
