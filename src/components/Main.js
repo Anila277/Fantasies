@@ -51,6 +51,7 @@ function Main({ user }) {
             <Routes>
                 <Route path='/' element={
                     <Index
+                        user={user}
                         poems={poems}
                         createPoems={createPoems}
                     />
