@@ -42,8 +42,12 @@ function Main({ user }) {
     }
 
     useEffect(() => {
-        getData();
-    }, [])
+        if (user) {
+            getData();
+        } else {
+            setPoems(null);
+        }
+    }, [user]);
 
     return (
         <main>
