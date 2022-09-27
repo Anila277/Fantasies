@@ -32,6 +32,7 @@ function Index(props) {
                 <img className='limiter'
                     src={poem.image} alt={poem.name}></img>
                 <p>{poem.title}</p>
+                <p>{poem.content}</p>
 
             </div>
 
@@ -78,14 +79,6 @@ function Index(props) {
                     />
                 </label>
                 <label>
-                    Content:
-                    <input
-                        type='text'
-                        value={newForm.content}
-                        onChange={handleChange}
-                        name='content' />
-                </label>
-                <label>
                     Author:
                     <input
                         type='text'
@@ -93,6 +86,14 @@ function Index(props) {
                         onChange={handleChange}
                         name='author'
                     />
+                </label>
+                <label>
+                    Content:
+                    <textarea
+                        type='text'
+                        value={newForm.content}
+                        onChange={handleChange}
+                        name='content' />
                 </label>
                 <label>
                     <input

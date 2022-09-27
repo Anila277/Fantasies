@@ -58,9 +58,20 @@ function Show({ poems, deletePoems, updatePoems, user }) {
     const loading = () => {
         return <h1> Your Poem is On the Way...</h1>;
     };
-
+    
     const loaded = () => {
-
+        
+        poem.comments.map(comments => (
+            <div className='comments' key={poem._id} >
+                <ul className='comments-list'>
+                    <li>
+                    {comments}
+                    </li>
+                </ul>
+            </div>
+    
+        ));
+        
         return (
             <section>
                 <h1>{poem.name}</h1>
@@ -72,7 +83,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                 <p>{poem.content}</p>
                 <p>Posted By: {poem.user}</p>
                 <p>{poem.tags}</p>
-                <p>{poem.comments}</p>
+                
                 {poem.user === user.userName ?
                     <span>
                     <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
@@ -96,7 +107,6 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                     </form>
             </section>
         )
-
     };
     useEffect(() => {
         if (poem) {
@@ -120,20 +130,20 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                         />
                     </label>
                     <label>
-                        Content:
-                        <input
-                            type='text'
-                            name='content'
-                            value={editForm.content}
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <label>
                         Author:
                         <input
                             type='text'
                             name='author'
                             value={editForm.author}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        Content:
+                        <textarea
+                            type='text'
+                            name='content'
+                            value={editForm.content}
                             onChange={handleChange}
                         />
                     </label>
