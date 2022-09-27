@@ -22,4 +22,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize auth object
+const auth = getAuth(app);
+
+// Config our provider
+const provider = new GoogleAuthProvider();
+
+// set up login function
+
+// set up logout function
+
+// export our functionality to be used within our components
 export { auth, login, logout };
