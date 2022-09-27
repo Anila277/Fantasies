@@ -3,12 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 function Show({ poems, deletePoems, updatePoems }) {
     const { id } = useParams();
-
-
     const poem = poems ? poems.find(p => p._id === id) : null;
-
     const navigate = useNavigate();
-
     const [editForm, setEditForm] = useState({
         name: '',
         content: '',
@@ -21,6 +17,15 @@ function Show({ poems, deletePoems, updatePoems }) {
     });
 
     const [isEditing, setIsEditing] = useState(false);
+
+    const handleEdit = () => {
+        setIsEditing(prevState => !prevState)
+    };
+
+    const handleDelete = () => {
+        deletePoems(poem._id)
+        navigate('/');
+    };
 
     const handleChange = (e) => {
         setEditForm({
@@ -35,22 +40,20 @@ function Show({ poems, deletePoems, updatePoems }) {
         setIsEditing(false);
     };
 
+    const handleConfirm = () => {
+        const confirmBox = window.confirm(
+            `Are you sure you want to delete ${poem.name}?`
+        )
+        if (confirmBox === true) {
+            handleDelete();
+        }
+    };
 
     const loading = () => {
         return <h1> Your Poem is On the Way...</h1>;
     };
 
-
     const loaded = () => {
-
-        const handleDelete = () => {
-            deletePoems(poem._id)
-            navigate('/');
-        };
-
-        const handleEdit = () => {
-            setIsEditing(prevState => !prevState)
-        };
 
         return (
             <section>
@@ -60,8 +63,8 @@ function Show({ poems, deletePoems, updatePoems }) {
                     alt={poem.name}
                 />
                 <p>{poem.content}</p>
-                <button onClick={handleEdit}>{isEditing ? 'Cancel Edit' : 'Edit'}</button>
-                <button onClick={handleDelete}>Delete</button>
+                <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
+                <button onClick={handleConfirm}>Delete</button>
             </section>
         )
 
@@ -78,7 +81,7 @@ function Show({ poems, deletePoems, updatePoems }) {
             {isEditing &&
                 <form onSubmit={handleSubmit}>
                     <label>
-                        Name:
+                        Title:
                         <input
                             type='text'
                             name='name'
@@ -88,20 +91,20 @@ function Show({ poems, deletePoems, updatePoems }) {
                         />
                     </label>
                     <label>
-                        Image:
-                        <input
-                            type='text'
-                            name='image'
-                            value={editForm.image}
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <label>
-                        Title:
+                        Content:
                         <input
                             type='text'
                             name='content'
                             value={editForm.content}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        Author:
+                        <input
+                            type='text'
+                            name='author'
+                            value={editForm.author}
                             onChange={handleChange}
                         />
                     </label>

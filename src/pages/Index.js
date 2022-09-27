@@ -55,7 +55,6 @@ function Index(props) {
         props.createPoems(newForm);
         setNewForm({
             name: '',
-            image: '',
             content: '',
             author: '',
             user: '',
@@ -70,7 +69,7 @@ function Index(props) {
         <section>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Poet:
+                    Title:
                     <input
                         type='text'
                         value={newForm.name}
@@ -79,15 +78,7 @@ function Index(props) {
                     />
                 </label>
                 <label>
-                    Image:
-                    <input
-                        type='text'
-                        value={newForm.image}
-                        onChange={handleChange}
-                        name='image' />
-                </label>
-                <label>
-                    Poem Title:
+                    Content:
                     <input
                         type='text'
                         value={newForm.content}
@@ -95,9 +86,26 @@ function Index(props) {
                         name='content' />
                 </label>
                 <label>
-                    submit
+                    Author:
                     <input
-                        type='submit' value='submit' />
+                        type='text'
+                        value={newForm.author}
+                        onChange={handleChange}
+                        name='author'
+                    />
+                </label>
+                <label>
+                    <input
+                        hidden
+                        type='text'
+                        value={props.user.displayName}
+                        onChange={handleChange}
+                        name='user'
+                    />
+                </label>
+                <label>
+                    <input
+                        type='submit' value='Add Poem' />
                 </label>
             </form>
             {props.poems ? loaded() : loading()}

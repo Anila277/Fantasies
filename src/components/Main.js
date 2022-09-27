@@ -13,7 +13,7 @@ function PrivatePageContainer({ children, user }) {
 function Main({ user }) {
     const [poems, setPoems] = useState(null);
 
-    const API_URL = 'http://localhost:4000/api/poems'
+    const API_URL = 'http://localhost:4000/api/poems/'
 
     const getData = async () => {
 
@@ -55,6 +55,42 @@ function Main({ user }) {
         }
     }
 
+    const deletePoems = async (id) => {
+        if (!user) return;
+        try {
+            const token = await user.getIdToken();
+            await fetch(API_URL + id, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            getData();
+        } catch (error) {
+            // TODO handle errors
+            console.log(error);
+        }
+    }
+
+    const updatePoems = async (updatedPoem, id) => {
+        if (!user) return;
+        try {
+            const token = await user.getIdToken();
+            await fetch(API_URL + id, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'Application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify(updatedPoem)
+            });
+            getData();
+        } catch (error) {
+            // TODO handle errors
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         if (user) {
             getData();
@@ -78,6 +114,8 @@ function Main({ user }) {
                     <PrivatePageContainer user={user}>
                         <Show
                             poems={poems}
+                            deletePoems={deletePoems}
+                            updatePoems={updatePoems}
                         />
                     </PrivatePageContainer>
                 } />
