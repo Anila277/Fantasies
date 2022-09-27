@@ -51,10 +51,12 @@ function About(props) {
 
     return (
         <div >
-            <h1>About Fantasies</h1>
-            <h3> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim distinctio ea
-                <br /> nesciunt, sapiente quibusdam fugiat, alias sunt pariatur, optio totam odit?
-                <br /> Aperiam ex dicta aspernatur suscipit tempora recusandae consequuntur officiis.</h3>
+            <h1>About Fantasies: Poetry Escape</h1>
+            <h3> Fantasies: Poetry Escape is the brain child of 4 GA Programming Students who,
+                <br /> after much thought realized their shared love of poetry. So, they descided
+                <br /> that they would make a place where Poets can share their work with the world. 
+                <br /> as well as a place where they can easily peruse the classics and take
+                <be /> inspiration from the poets of the past </h3>
 
             <h2>Reviews</h2>
             <form onSubmit={handleSubmit}>
