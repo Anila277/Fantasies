@@ -9,7 +9,7 @@ function Index(props) {
         image: '',
         content: '',
         author: '',
-        user: '',
+        createdByUser: '',
         tags: [],
         comments: [],
         likes: 0,
@@ -57,7 +57,7 @@ function Index(props) {
             name: '',
             content: '',
             author: '',
-            user: '',
+            createdByUser: '',
             tags: [],
             comments: [],
             likes: 0,
@@ -96,11 +96,11 @@ function Index(props) {
                 </label>
                 <label>
                     <input
-                        hidden
+                        // hidden
                         type='text'
-                        value={props.user.displayName}
+                        value={newForm.createdByUser}
                         onChange={handleChange}
-                        name='user'
+                        name='createdByUser'
                     />
                 </label>
                 <label>

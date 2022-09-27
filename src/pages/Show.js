@@ -9,7 +9,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
         name: '',
         content: '',
         author: '',
-        user: '',
+        createdByUser: '',
         tags: [],
         comments: [],
         likes: 0,
@@ -81,7 +81,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                     />
                     <p>{poem.author}</p>
                 <p>{poem.content}</p>
-                <p>Posted By: {poem.user}</p>
+                <p>Posted By: {poem.createdByUser}</p>
                 <p>{poem.tags}</p>
                 
                 {poem.user === user.userName ?
