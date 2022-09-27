@@ -8,7 +8,15 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    auth.onAuthStateChanged((userObjOrNull) => setUser(userObjOrNull))
+
+    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
+      setUser(userObjOrNull)
+    });
+
+    return () => {
+      unsubscribe();
+    };
+
   }, []);
 
   return (
