@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.Samuel {
+  position:relative;
+  display: block;
+  margin-left: 80%;
+}
+.Anila {
+  position: relative;
+margin-right: 80%;
+}
+.Ben {
+  position:relative;
+margin-right: 80%;
+}
+.Dudley {
+  position:relative;
+  margin-left: 80%;
+}
