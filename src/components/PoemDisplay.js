@@ -1,9 +1,22 @@
+
 import React from "react";
 
-const PoemDisplay = (props) => {
+const PoemDisplay = ({ poem }) => {
+  const loaded = () => {
+    return (
+      <>
+        <h1>{poem.title}</h1>
+        <h2>{poem.poet}</h2>
+        <h2>{poem.poem}</h2>
+      </>
+    );
+  };
 
-    return <h1> https://www.poemist.com/api/v1/randompoems</h1>;
+  const loading = () => {
+    return <h1>No Poem to Display</h1>;
+  };
+
+  return poem ? loaded() : loading();
 };
 
-// We must export the component to use it in other files
 export default PoemDisplay;
