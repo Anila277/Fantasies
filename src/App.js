@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import './App.css';
+import PoemDisplay from './components/PoemDisplay'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -24,6 +25,7 @@ function App() {
 
       <Header user={user} />
       <Main user={user} />
+      <PoemDisplay />
 
     </div>
   );
