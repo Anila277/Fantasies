@@ -1,8 +1,9 @@
 [
     {
+        "_id": "13n1235n351b592119v514y958nh9",
         "poet": "Anila",
-        "title": "Red Rose",
+        "name": "Red Rose",
         "photo": "Red_Rose",
-        "poem": "Roses are red, Violets are blue, Sugar is sweet, And so are you."
+        "content": "Roses are red, Violets are blue, Sugar is sweet, And so are you."
     }
 ]
