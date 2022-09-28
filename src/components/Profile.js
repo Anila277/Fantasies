@@ -2,19 +2,16 @@ import { useState, useEffect } from 'react';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Index from '../pages/Index';
-import Show from '../pages/Show';
-import MainIndex from '../pages/MainIndex';
-import About from '../pages/About';
+import User from '../pages/User'
 
 function PrivatePageContainer({ children, user }) {
     return user ? children : <Navigate to='/' />
 }
 
-function Main({ user }) {
+function Profile({ user }) {
     const [poems, setPoems] = useState(null);
 
-    const API_URL = 'http://localhost:4000/api/poems/'
+    const API_URL = 'http://localhost:4000/api/poems/profile/'
 
     const getData = async () => {
 
@@ -104,32 +101,15 @@ function Main({ user }) {
     return (
         <main>
             <Routes>
-                <Route path='/' element={
-                    <MainIndex />
-                } />
-                <Route path='/index' element={
-                    <Index
+                <Route path='/profile' element={
+                    <User
                         user={user}
                         poems={poems}
-                        createPoems={createPoems}
                     />
-                } />
-                <Route path='/poems/:id' element={
-                    <PrivatePageContainer user={user}>
-                        <Show
-                            poems={poems}
-                            user={user}
-                            deletePoems={deletePoems}
-                            updatePoems={updatePoems}
-                        />
-                    </PrivatePageContainer>
-                } />
-                <Route path='/about' element={
-                    <About />
                 } />
             </Routes>
         </main>
     );
 }
 
-export default Main;
+export default Profile;
