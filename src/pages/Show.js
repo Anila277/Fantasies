@@ -9,7 +9,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
     const navigate = useNavigate();
 
 
-    const [likes, setLikes] = useState(0);
+    const [likes, setLikes] = useState(99);
     const [isClicked, setIsClicked] = useState(null);
 
     const likeButton = () => {
@@ -75,20 +75,20 @@ function Show({ poems, deletePoems, updatePoems, user }) {
     const loading = () => {
         return <h1> Your Poem is On the Way...</h1>;
     };
-    
+
     const loaded = () => {
-        
+
         poem.comments.map(comments => (
             <div className='comments' key={poem._id} >
                 <ul className='comments-list'>
                     <li>
-                    {comments}
+                        {comments}
                     </li>
                 </ul>
             </div>
-    
+
         ));
-        
+
         return (
             <section>
                 <h1>{poem.name}</h1>
@@ -99,7 +99,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                 <p>{poem.author}</p>
                 <p>{poem.content}</p>
                 <p>{poem.tags}</p>
-                
+
                 {poem.user === user.userName ?
                     <span>
                         <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
@@ -108,7 +108,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                     <span></span>
 
                 }
-
+                <br />
                 <span className="likes-counter">{`${likes}`}</span> <br />
                 <BsHeartFill className={`like-button ${isClicked && 'liked'}`} onClick={likeButton} />
 

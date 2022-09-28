@@ -10,11 +10,18 @@ function Header({ user }) {
             <Link to="/about">
                 <div>About</div>
             </Link>
+            <Link to="/index">
+                <div>Poem Index</div>
+            </Link>
             <section>
                 {
                     user ?
                         <>
-                            <div>Welcome, {user.displayName}</div>
+                            <div>Welcome,
+                                <Link to="/profile">
+                                    {user.displayName}
+                                </Link>
+                            </div>
                             <div onClick={logout}>Logout</div>
                         </>
                         :
