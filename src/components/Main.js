@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Index from '../pages/Index';
 import Show from '../pages/Show';
+import MainIndex from '../pages/MainIndex';
 import About from '../pages/About';
 
 function PrivatePageContainer({ children, user }) {
@@ -105,6 +106,9 @@ function Main({ user }) {
             <h1>Hello Main page</h1>
             <Routes>
                 <Route path='/' element={
+                    <MainIndex />
+                } />
+                <Route path='/index' element={
                     <Index
                         user={user}
                         poems={poems}
