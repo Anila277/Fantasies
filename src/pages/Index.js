@@ -28,9 +28,11 @@ function Index(props) {
                         {poem.name}
                     </Link>
                 </h2>
-
-                <img className='limiter'
-                    src={poem.image} alt={poem.name}></img>
+                { poem.image ?
+                    <img className='limiter'
+                        src={poem.image} alt={poem.name}></img>
+                : <></>
+                }
                 <p>{poem.title}</p>
                 <p>{poem.content}</p>
 
