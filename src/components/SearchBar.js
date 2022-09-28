@@ -13,7 +13,7 @@ function SearchBar({ placeholder, data }) {
         setWordEntered(searchWord);
         const newFilter = data.filter((value) => {
             return (
-                value.title.toLowerCase().includes(searchWord.toLowerCase())
+                value.name.toLowerCase().includes(searchWord.toLowerCase())
             )
         });
 
@@ -31,7 +31,7 @@ function SearchBar({ placeholder, data }) {
         <div className="search">
             <div className="searchInputs">
                 <input type="text"
-                    placeholder="placeholder"
+                    placeholder="Enter A Poem"
                     onChange={handleFilter}
                     value={wordEntered}
                 />
@@ -39,11 +39,11 @@ function SearchBar({ placeholder, data }) {
                     {filteredData.length === 0 ? <ImSearch /> : <AiFillCloseCircle onClick={clearInput} />} </div>
             </div>
 
-            {filteredData.length != 0 && (
+            {filteredData.length !== 0 && (
                 <div className="result">
                     {filteredData.slice(0, 5).map((value, key) => {
-                        return <a href={value.title}>
-                            <p>{value.title} </p>
+                        return <a href={"poems/" + value._id}>
+                            <p>{value.name} </p>
                         </a>
                     })}
                 </div>
