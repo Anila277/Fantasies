@@ -105,6 +105,7 @@ function Profile({ user }) {
                     <User
                         user={user}
                         poems={poems}
+                        createPoems={createPoems}
                     />
                 } />
             </Routes>
