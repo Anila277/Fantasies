@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -13,6 +13,7 @@ function PrivatePageContainer({ children, user }) {
 
 function Main({ user }) {
     const [poems, setPoems] = useState(null);
+    const getDataRef = useRef(null);
 
     const API_URL = 'http://localhost:4000/api/poems/'
 
@@ -94,8 +95,12 @@ function Main({ user }) {
     }
 
     useEffect(() => {
+        getDataRef.current = getData;
+    })
+
+    useEffect(() => {
         if (user) {
-            getData();
+            getDataRef.current();
         } else {
             setPoems(null);
         }
