@@ -64,16 +64,16 @@ function About(props) {
                 <h1>About Our Team</h1>
                 <br />
                 <h3>Ben Allen</h3>
-                <p className="BenP"> The Functionality Genius<img className="Ben" src={require('../assets/Capture3.PNG')} alt="Ben" /></p>
+                <p className="BenP"> Lead Backend<img className="Ben" src={require('../assets/Capture3.PNG')} alt="Ben" /></p>
                 <br />
                 <h3>Dudley Gamino</h3>
-                <p className="DudleyP"> The Styling Master<img className="Dudley" src={require('../assets/Capture.PNG')} alt="Dudley" /></p>
+                <p className="DudleyP"> Lead FrontEnd<img className="Dudley" src={require('../assets/Capture.PNG')} alt="Dudley" /></p>
                 <br />
                 <h3>Samuel Johnson</h3>
-                <p className="SamuelP"> The Chief Overseer<img className="Samuel" src={require('../assets/Capture4.PNG')} alt="Samuel" /></p>
+                <p className="SamuelP"> Poduct Manager<img className="Samuel" src={require('../assets/Capture4.PNG')} alt="Samuel" /></p>
                 <br />
                 <h3>Anila Nisar</h3>
-                <p> The Mastermind<img className="Anila" src={require('../assets/Capture2.PNG')} alt="Anila" /></p>
+                <p> Release Manager<img className="Anila" src={require('../assets/Capture2.PNG')} alt="Anila" /></p>
 
             </div>
 
