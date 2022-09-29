@@ -17,7 +17,7 @@ body {
 .mainMain {
   background-image: url(https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
   width: 80%;
-  height: 600px;
+  height: 700px;
   border-radius: 8px;
   background-size: cover;
   margin-left: 150px;
@@ -103,6 +103,7 @@ a:hover {
   position: absolute;
   top: 20%;
   color: white;
+  right: 44%;
 }
 
 .addPoem {
