@@ -72,51 +72,57 @@ function Index(props) {
     };
 
     return (
-        <section>
-            <form onSubmit={handleSubmit}>
+        <section className='content'>
+        <div className='icon2'></div>
+            <form className='addPoem' onSubmit={handleSubmit}>
+                <h2> Add Your Poetic Fantasy</h2>
                 <label>
-                    Title:
                     <input
                         type='text'
                         value={newForm.name}
                         onChange={handleChange}
                         name='name'
+                        placeholder='Title'
                     />
                 </label>
                 <label>
-                    Author:
                     <input
                         type='text'
                         value={newForm.author}
                         onChange={handleChange}
                         name='author'
+                        placeholder='author'
                     />
                 </label>
-                <label>
-                    Content:
+                <label >
                     <textarea
-                    className='poemInput'
+                        className='poemInput'
+                        id='contentC'
                         type='text'
                         value={newForm.content}
                         onChange={handleChange}
-                        name='content' />
+                        name='content' 
+                        placeholder='content'
+                        />
                 </label>
                 <label>
-                    Image:
                     <input 
                         type='url'
                         value={newForm.image}
                         onChange={handleChange}
                         name='image'
+                        placeholder='image'
                     />
                 </label>
                 <label>
+
                     <input
                         hidden
                         type='text'
                         value={newForm.createdByUser}
                         onChange={handleChange}
                         name='createdByUser'
+                        
                     />
                 </label>
                 <label>
@@ -124,7 +130,9 @@ function Index(props) {
                         type='submit' value='Add Poem' />
                 </label>
             </form>
+            <div className='Poems'>
             {props.poems ? loaded() : loading()}
+            </div>
         </section>
     );
 
