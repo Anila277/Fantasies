@@ -3,17 +3,14 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Profile from './components/Profile';
-import ImageSlider from './components/ImageSlider';
-import { SliderData } from './components/SliderData';
-
 import './App.css';
+import react from "react";
+
 
 
 function App() {
-  const [user, setUser] = useState(null);
-
+  const [user, setUser] = react.useState(null);
   useEffect(() => {
-
     const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
       setUser(userObjOrNull)
     });
@@ -24,15 +21,15 @@ function App() {
 
   }, []);
 
+
   return (
     <div className="App">
-      {/* <ImageSlider slides={SliderData} />; */}
       <Header user={user} />
       <Main user={user} />
-      <Profile user={user} />
-
     </div>
   );
+  
+  
 }
 
 export default App;

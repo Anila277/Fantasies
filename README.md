@@ -14,7 +14,7 @@
 
 ## Getting Started
 
-[Fantasies-App](https://fantasies-a-poetry-escape.netlify.app/),
+[Fantasies-App](https://fantasies-a-poetry-escape.netlify.app/)
 [Fantasies-Server](https://fantasies-a-poetry-escape.herokuapp.com/api/poems/)
 
     

@@ -124,7 +124,7 @@ function Index(props) {
                 <label>
 
                     <input
-                        hidden
+                        // hidden
                         type='text'
                         value={newForm.createdByUser}
                         onChange={handleChange}
