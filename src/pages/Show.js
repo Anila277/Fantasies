@@ -112,7 +112,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                 <p>{poem.content}</p>
                 <p>{poem.tags}</p>
 
-                {poem.user === user.userName ?
+                {poem.createdByUser === user.userName ?
                     <span>
                         <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
                         <button onClick={handleConfirm}>Delete</button>
