@@ -13,17 +13,7 @@ import react from "react";
 function App() {
   const [user, setUser] = react.useState(null);
 
-  useEffect(() => {
 
-    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
-      setUser(userObjOrNull)
-    });
-
-    return () => {
-      unsubscribe();
-    };
-
-  }, []);
 
   const apiKey = "lZ7wrmcIPWDEvZLv";
   const userID = "10943";
@@ -40,16 +30,25 @@ function App() {
     
     setPoema(data);
     console.log(data);
-    console.log(Poema[0]);
-  
-
+    console.log(Poema[0]);  
   };
 
+  useEffect(() => {
+    getPoema()
+    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
+      setUser(userObjOrNull)
+    });
+
+    return () => {
+      unsubscribe();
+    };
+
+  }, []);
   return (
     <div className="App">
       <Header user={user} />
       <Main user={user} />
-      <Form poemasearch={getPoema} />
+      <Form Poemasearch={getPoema} />
       <PoemDisplay Poema={Poema} />
     </div>
   );

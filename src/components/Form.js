@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = (poema) => {
+const Form = (Poema) => {
   const [formData, setFormData] = React.useState({
     searchterm: "",
   });
@@ -11,7 +11,7 @@ const Form = (poema) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    poema.poemasearch(formData.searchterm);
+    Poema.Poemasearch(formData.searchterm);
   };
 
   return (
