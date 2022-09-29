@@ -12,7 +12,16 @@ import react from "react";
 
 function App() {
   const [user, setUser] = react.useState(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
+      setUser(userObjOrNull)
+    });
 
+    return () => {
+      unsubscribe();
+    };
+
+  }, []);
 
 
   const apiKey = "lZ7wrmcIPWDEvZLv";
@@ -30,20 +39,14 @@ function App() {
     
     setPoema(data);
     console.log(data);
-    console.log(Poema[0]);  
+    console.log(Poema[0].title);
+    console.log(Poema[0].poet.name);
+    console.log(Poema[0].content);  
+  
+  
   };
 
-  useEffect(() => {
-    getPoema()
-    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
-      setUser(userObjOrNull)
-    });
 
-    return () => {
-      unsubscribe();
-    };
-
-  }, []);
   return (
     <div className="App">
       <Header user={user} />
