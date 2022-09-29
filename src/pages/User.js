@@ -28,9 +28,11 @@ function Index(props) {
                         {poem.name}
                     </Link>
                 </h2>
-
-                <img className='limiter'
-                    src={poem.image} alt={poem.name}></img>
+                { poem.image ?
+                    <img className='limiter'
+                        src={poem.image} alt={poem.name}></img>
+                : <></>
+                }
                 <p>{poem.title}</p>
                 <p>{poem.content}</p>
 
@@ -57,6 +59,7 @@ function Index(props) {
             name: '',
             content: '',
             author: '',
+            image: '',
             createdByUser: '',
             tags: [],
             comments: [],
@@ -67,6 +70,56 @@ function Index(props) {
 
     return (
         <section>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Title:
+                    <input
+                        type='text'
+                        value={newForm.name}
+                        onChange={handleChange}
+                        name='name'
+                    />
+                </label>
+                <label>
+                    Author:
+                    <input
+                        type='text'
+                        value={newForm.author}
+                        onChange={handleChange}
+                        name='author'
+                    />
+                </label>
+                <label>
+                    Content:
+                    <textarea
+                        type='text'
+                        value={newForm.content}
+                        onChange={handleChange}
+                        name='content' />
+                </label>
+                <label>
+                    Image:
+                    <input 
+                        type='url'
+                        value={newForm.image}
+                        onChange={handleChange}
+                        name='image'
+                    />
+                </label>
+                <label>
+                    <input
+                        hidden
+                        type='text'
+                        value={newForm.createdByUser}
+                        onChange={handleChange}
+                        name='createdByUser'
+                    />
+                </label>
+                <label>
+                    <input
+                        type='submit' value='Add Poem' />
+                </label>
+            </form>
             {props.poems ? loaded() : loading()}
         </section>
     );
