@@ -29,9 +29,14 @@ function Index(props) {
                     </Link>
                 </h2>
 
+
                 <img className='limiter'
                     src={poem.image} alt={poem.name}></img>
                 <p className='userContent'>{poem.content}</p>
+
+                <p className='author'>{poem.author}</p>
+
+
             </div>
 
         ));
@@ -55,6 +60,7 @@ function Index(props) {
             name: '',
             content: '',
             author: '',
+            image: '',
             createdByUser: '',
             tags: [],
             comments: [],
@@ -91,6 +97,15 @@ function Index(props) {
                         value={newForm.content}
                         onChange={handleChange}
                         name='content' />
+                </label>
+                <label>
+                    Image:
+                    <input 
+                        type='url'
+                        value={newForm.image}
+                        onChange={handleChange}
+                        name='image'
+                    />
                 </label>
                 <label>
                     <input

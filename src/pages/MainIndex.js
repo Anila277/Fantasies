@@ -2,9 +2,7 @@ import SearchBar from '../components/SearchBar';
 import PoemData from '../components/Data.json';
 import ImageSlider from '../components/ImageSlider';
 import { SliderData } from '../components/SliderData';
-
-
-
+           
 
     function MainIndex() {
         return (
@@ -13,6 +11,8 @@ import { SliderData } from '../components/SliderData';
             <h1 className='title'> Welcome to Fantasies </h1>
             
             <ImageSlider slides={SliderData} />;
+
+ <SearchBar placeholder="Search A Poem" data={PoemData} />
 
             
         </div>

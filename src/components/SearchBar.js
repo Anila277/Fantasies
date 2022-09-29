@@ -31,7 +31,9 @@ function SearchBar({ placeholder, data }) {
         <div className="search">
             <div className="searchInputs">
                 <input type="text"
-                    placeholder="placeholder"
+
+                    placeholder={placeholder}
+
                     onChange={handleFilter}
                     value={wordEntered}
                 />
@@ -39,12 +41,18 @@ function SearchBar({ placeholder, data }) {
                     {filteredData.length === 0 ? <ImSearch /> : <AiFillCloseCircle onClick={clearInput} />} </div>
             </div>
 
-            {filteredData.length != 0 && (
+            {filteredData.length !== 0 && (
                 <div className="result">
-                    {filteredData.slice(0, 5).map((value, key) => {
-                        return <a href={value.title}>
-                            <p>{value.title} </p>
-                        </a>
+                    {filteredData.slice(0, 1).map((value, key) => {
+                        return (
+                            <>
+                                <h2>{value.title} </h2>
+                                <h4>By: {value.poet} </h4>
+                                <p>{value.poem} </p>
+                                <h5>Published: {value.published} </h5>
+                            </>
+                        )
+
                     })}
                 </div>
             )}
