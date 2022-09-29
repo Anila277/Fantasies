@@ -1,44 +1,243 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&display=swap');
+*{
+  
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #556483;
+body{
   min-height: 100vh;
+  background: linear-gradient(to right top, #1a212de6, #3c2f48 );
+}
+
+
+.mainMain{ 
+  background-image: url(https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80); 
+  width: 80%;
+  height: 600px;
+  border-radius: 8px;
+  background-size: cover;
+  margin-left: 150px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: 10%;
+  margin-top: 10%;
+
+}
+
+.glassTest {
+  background: linear-gradient(to right top, #1a2d2a62, #3c2f48a5 );
+  min-height: 50vh;
+  width: 60%;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
+  left: 15%;
+  color: white;
+ 
+}
+.nav,a{
+text-decoration: none;
+color: white;
+cursor: pointer ;
+}
+a:hover{
+  color:rgb(140, 0, 255);
+}
+.loginbtn:hover{
+  color:rgb(140, 0, 255);
+}
+
+.icon{
+  background: url(https://www.cppng.com/file/thumb/2020-06/21904-6-open-book-light-thumb.png);
+  background-size: cover;
+  position: absolute;
+top: 20%;
+left: 14%;
+width: 100px;
+height: 100px;
+}
+.icon2{
+  background: url(https://www.cppng.com/file/thumb/2020-06/21904-6-open-book-light-thumb.png);
+  background-size: cover;
+  position: absolute;
+top: 10%;
+left: 5%;
+width: 100px;
+height: 100px;
+}
+
+.nav{
+  
+  width: 8rem;
+  height: 20rem;
+  border-radius: 8px;
+  background-size: cover;
+  margin-left: 150px;
+  background: linear-gradient(to right top, #1a2d2a3e, #3c2f4867 );
+  box-shadow: 0 8px 10px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 34%;
+  right: 13%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  color: white;
+
+   }
+.title{
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  top: 20%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.addPoem{
+  height: 3%;
+  width: 60%;
+  padding: 5%;
+  color: white;
+  position: absolute;
+  top: 1%;
+  left: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Poems {
+  background: linear-gradient(to right top, #1a2d2a27, #3c2f4824 );
+  min-height: 50vh;
+  width: 50%;
+  padding: 1%;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
+  color: white;
+  position: absolute;
+  top: 20%;
+  left: 18%;
+  margin-top: 20px;
+}
+/* .poemInput{
+
+  border: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.268) ;
+
+} */
+input{
+  margin: 10px;
+  border: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.084);
+  padding: 5px;
+  border-radius: 3px;
 }
 .limiter {
-  height: 12.5rem;
-  width: 12.5rem;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
+  border: 3px;
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+
+  
+}
+/* .poemmContent
+{
+  background: linear-gradient(to right top, #1a2d2a24, #3c2f48a5 );
+  min-height: 50vh;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
+  left: 15%;
+  color: white;
+  display: flex;
+   */ 
+  
+/* /* } */
+
+.PPoem{
+  height: 10%;
+  width: 50%;
+  color: black;
+
+
+}
+.author{
+  color: black;
+  outline: whitesmoke;
+  
   
 }
 
+#PoemId{
+  color:yellow;
+  
+}
+.poem{
+  padding: 10px;
+}
+
+.slider{
+  background: linear-gradient(to right top, #1a2d2a62, #3c2f48a5 );
+  height: 100%;
+  width: 100%;
+  max-height: 466px;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
+  left: 15%;
+  color: white;
+  position: absolute;
+  top: 260px;
+  left: 29%
+}
+.image{
+  max-width: 700px;
+  max-height: 466px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
