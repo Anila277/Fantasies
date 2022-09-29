@@ -5,8 +5,7 @@ function MainIndex() {
     return (
         <div>
             <h1>Hello MainIndex </h1>
-            <SearchBar placeholder='Enter a poem' data={PoemData} />
-
+            <SearchBar placeholder="Search A Poem" data={PoemData} />
         </div>
     )
 }
