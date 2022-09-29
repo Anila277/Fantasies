@@ -93,6 +93,7 @@ function Index(props) {
                 <label>
                     Content:
                     <textarea
+                        className='poemInput'
                         type='text'
                         value={newForm.content}
                         onChange={handleChange}
@@ -100,7 +101,7 @@ function Index(props) {
                 </label>
                 <label>
                     Image:
-                    <input 
+                    <input
                         type='url'
                         value={newForm.image}
                         onChange={handleChange}

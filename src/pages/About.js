@@ -1,6 +1,5 @@
 import { GiFlexibleStar } from 'react-icons/gi';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
 const colors = {

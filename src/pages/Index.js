@@ -6,8 +6,8 @@ function Index(props) {
 
     const [newForm, setNewForm] = useState({
         name: '',
-        image: '',
         content: '',
+        image: '',
         author: '',
         createdByUser: '',
         tags: [],
@@ -24,7 +24,7 @@ function Index(props) {
             <div className='poem' key={poem._id}  >
 
                 {/*  className='poemmContent'> */}
- 
+
 
                 <h2>
                     <Link id='PoemId' to={`/poems/${poem._id}`}>
@@ -32,15 +32,15 @@ function Index(props) {
                     </Link>
                     <img className='limiter'
                         src={poem.image} alt={poem.name}>
-                        </img>
+                    </img>
                 </h2>
 
-                
+
 
                 <p className='PPoem'> {poem.content}</p>
                 <p className='author'>{poem.author}</p>
-                    </div>
-              
+            </div>
+
 
             // </div>
 
@@ -60,12 +60,13 @@ function Index(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!newForm.image) delete newForm.image
         props.createPoems(newForm);
         setNewForm({
             name: '',
             content: '',
-            author: '',
             image: '',
+            author: '',
             createdByUser: '',
             tags: [],
             comments: [],
@@ -74,9 +75,11 @@ function Index(props) {
         })
     };
 
+
+
     return (
         <section className='content'>
-        <div className='icon2'></div>
+            <div className='icon2'></div>
             <form className='addPoem' onSubmit={handleSubmit}>
                 <h2> Add Your Poetic Fantasy</h2>
                 <label>
@@ -97,23 +100,23 @@ function Index(props) {
                         placeholder='author'
                     />
                 </label>
-                <label>
-
-
-                    Content:
+                <label >
                     <textarea
+                        className='poemInput'
                         type='text'
                         value={newForm.content}
                         onChange={handleChange}
-                        name='content' />
+                        name='content'
+                        placeholder='content'
+                    />
                 </label>
                 <label>
-                    Image:
-                    <input 
+                    <input
                         type='url'
                         value={newForm.image}
                         onChange={handleChange}
                         name='image'
+                        placeholder='image'
                     />
                 </label>
                 <label>
@@ -124,25 +127,16 @@ function Index(props) {
                         value={newForm.createdByUser}
                         onChange={handleChange}
                         name='createdByUser'
-                        
+
                     />
                 </label>
                 <label>
-                <label className='poemInput'>
-                    <textarea
-                        type='text'
-                        value={newForm.content}
-                        onChange={handleChange}
-                        name='content' 
-                        placeholder='content'
-                        />
-                </label>
                     <input
                         type='submit' value='Add Poem' />
                 </label>
             </form>
             <div className='Poems'>
-            {props.poems ? loaded() : loading()}
+                {props.poems ? loaded() : loading()}
             </div>
         </section>
     );
