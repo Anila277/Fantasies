@@ -16,7 +16,7 @@ function MainIndex() {
 
             </div>
             <div>
-                {/* <SearchBar placeholder="Search A Poem" data={PoemData} /> */}
+                <SearchBar placeholder="Search A Poem" data={PoemData} />
             </div>
         </>
     )
