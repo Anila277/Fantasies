@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BsHeartFill } from 'react-icons/bs';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 
 import { useParams, useNavigate } from 'react-router-dom';
@@ -19,6 +19,18 @@ function Show({ poems, deletePoems, updatePoems, user }) {
             setLikes(likes + 1);
         }
         setIsClicked(!isClicked)
+    }
+
+    const [dislikes, setDislikes] = useState(0);
+    const [isDisliked, setIsDisliked] = useState(null);
+
+    const dislikeButton = () => {
+        if (isDisliked) {
+            setDislikes(dislikes - 1);
+        } else {
+            setDislikes(dislikes + 1);
+        }
+        setIsDisliked(!isDisliked)
     }
 
 
@@ -109,9 +121,11 @@ function Show({ poems, deletePoems, updatePoems, user }) {
 
                 }
                 <br />
-                <span className="likes-counter">{`${likes}`}</span> <br />
-                <BsHeartFill className={`like-button ${isClicked && 'liked'}`} onClick={likeButton} />
+                <span className="likes-counter">{`${likes}`}</span>
+                <FaThumbsUp className={`like-button ${isClicked && 'liked'}`} onClick={likeButton} />
 
+                <span className="dislikes-counter">{`${dislikes}`}</span>
+                <FaThumbsDown className={`dislike-button ${isClicked && 'disliked'}`} onClick={dislikeButton} />
 
                 <br />
                 <form onSubmit={handleComment}>
