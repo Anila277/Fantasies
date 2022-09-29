@@ -134,6 +134,19 @@ height: 100px;
   margin-top: 10%;
 }
 
+.PoemsShow {
+  background: linear-gradient(to right top, #1a2d2a27, #3c2f4824 );
+  min-height: 50vh;
+  width: 50%;
+  padding: 1%;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
+  color: white;
+  position: absolute;
+  top: 2%;
+  left: 18%;
+  }
+
 @media only screen and (max-width: 1370px) {
   .Poems {
     top: 25%;
@@ -200,6 +213,11 @@ input{
   
 }
 
+.poemmContentShow {
+  top: 0;
+  margin-top: 5vh;
+}
+
 .PPoem{
   height: 10%;
   width: 50%;
@@ -208,13 +226,16 @@ input{
 
 }
 .author{
-  color: black;
+  color: white;
+  font-size: 24px;
   outline: whitesmoke;
   
   
 }
 
 #PoemId{
+  font-family: 'Dancing Script', cursive;
+  font-size: x-large;
   color:yellow;
   
   
@@ -222,6 +243,13 @@ input{
 .poem{
   padding: 10px;
   max-height: 55vh;
+}
+
+.poem h1 {
+  font-size: xx-large;
+  font-weight: 600;
+  font-family: 'Dancing Script', cursive;
+  color: yellow;
 }
 
 .slider{
@@ -291,7 +319,8 @@ input{
 
 .profile h3 {
   color: yellow;
-  font-size: 24px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
 }
 
 .profileTitle {
@@ -310,4 +339,13 @@ input{
   margin-left: 25%;
   flex-wrap: wrap;
   color: white;
+}
+
+.likes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumbs {
+  margin-right: 5px;
 }
