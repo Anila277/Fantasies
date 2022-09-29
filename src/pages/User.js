@@ -31,9 +31,7 @@ function Index(props) {
 
                 <img className='limiter'
                     src={poem.image} alt={poem.name}></img>
-                <p>{poem.title}</p>
-                <p>{poem.content}</p>
-
+                <p className='userContent'>{poem.content}</p>
             </div>
 
         ));
@@ -96,7 +94,7 @@ function Index(props) {
                 </label>
                 <label>
                     <input
-                        // hidden
+                        hidden
                         type='text'
                         value={newForm.createdByUser}
                         onChange={handleChange}
