@@ -6,8 +6,8 @@ function Index(props) {
 
     const [newForm, setNewForm] = useState({
         name: '',
-        image: '',
         content: '',
+        image:'',
         author: '',
         createdByUser: '',
         tags: [],
@@ -60,12 +60,13 @@ function Index(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(!newForm.image) delete newForm.image
         props.createPoems(newForm);
         setNewForm({
             name: '',
             content: '',
+            image:'',
             author: '',
-            image: '',
             createdByUser: '',
             tags: [],
             comments: [],
@@ -73,6 +74,8 @@ function Index(props) {
             dislikes: 0,
         })
     };
+
+
 
     return (
         <section className='content'>
@@ -108,12 +111,12 @@ function Index(props) {
                         />
                 </label>
                 <label>
-                    Image:
                     <input 
                         type='url'
                         value={newForm.image}
                         onChange={handleChange}
                         name='image'
+                        placeholder='image'
                     />
                 </label>
                 <label>
