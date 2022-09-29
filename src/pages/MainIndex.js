@@ -2,20 +2,23 @@ import SearchBar from '../components/SearchBar';
 import PoemData from '../components/Data.json';
 import ImageSlider from '../components/ImageSlider';
 import { SliderData } from '../components/SliderData';
-           
 
-    function MainIndex() {
-        return (
+
+function MainIndex() {
+    return (
+        <>
             <div className='mainMain'>
-         <div className='icon'></div>
-            <h1 className='title'> Welcome to Fantasies </h1>
-            
-            <ImageSlider slides={SliderData} />;
+                <div className='icon'></div>
+                <h1 className='title'> Welcome to Fantasies </h1>
 
- <SearchBar placeholder="Search A Poem" data={PoemData} />
+                <ImageSlider slides={SliderData} />
 
-            
-        </div>
+
+            </div>
+            <div>
+                {/* <SearchBar placeholder="Search A Poem" data={PoemData} /> */}
+            </div>
+        </>
     )
 }
 
