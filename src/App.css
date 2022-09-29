@@ -122,14 +122,14 @@ height: 100px;
   left: 18%;
   margin-top: 20px;
 }
-/* .poemInput{
+.poemInput{
 
   border: none;
   -ms-appearance: none;
   appearance: none;
   background: rgba(255, 255, 255, 0.268) ;
 
-} */
+}
 input{
   margin: 10px;
   border: none;

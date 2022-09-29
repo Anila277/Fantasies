@@ -93,6 +93,7 @@ function Index(props) {
                 <label>
                     Content:
                     <textarea
+                    className='poemInput'
                         type='text'
                         value={newForm.content}
                         onChange={handleChange}
