@@ -21,23 +21,25 @@ function Index(props) {
     const loaded = () => {
 
         return props.poems.map(poem => (
-            <div className='poem' key={poem._id} >
+            <div className='poem' key={poem._id}  >
+
+                {/*  className='poemmContent'> */}
+ 
 
                 <h2>
-                    <Link to={`/poems/${poem._id}`}>
+                    <Link id='PoemId' to={`/poems/${poem._id}`}>
                         {poem.name}
                     </Link>
+                    <img className='limiter'
+                        src={poem.image} alt={poem.name}>
+                        </img>
                 </h2>
 
+                
 
-                <img className='limiter'
-                    src={poem.image} alt={poem.name}></img>
-                <p className='userContent'>{poem.content}</p>
-
+                <p className='poemmContent'> {poem.content}</p>
                 <p className='author'>{poem.author}</p>
-
-
-            </div>
+                    </div>
 
         ));
     };

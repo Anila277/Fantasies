@@ -37,7 +37,7 @@ function Index(props) {
 
                 
 
-                <p className='PPoem'> {poem.content}</p>
+                <p className='poemmContent'> {poem.content}</p>
                 <p className='author'>{poem.author}</p>
                     </div>
               
@@ -61,6 +61,7 @@ function Index(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!newForm.image) delete newForm.image
+        // if(!newForm.name) delete newForm.name
         props.createPoems(newForm);
         setNewForm({
             name: '',
@@ -103,6 +104,7 @@ function Index(props) {
                 <label >
                     <textarea
                         className='poemInput'
+                        id='contentC'
                         type='text'
                         value={newForm.content}
                         onChange={handleChange}
