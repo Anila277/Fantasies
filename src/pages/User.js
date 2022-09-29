@@ -97,7 +97,9 @@ function Index(props) {
                 <label >
                     <textarea
                         className='poemInput'
+
                         id='contentC'
+
                         type='text'
                         value={newForm.content}
                         onChange={handleChange}

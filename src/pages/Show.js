@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+import LikeDis from '../components/LikesDis';
+
 
 
 import { useParams, useNavigate } from 'react-router-dom';
@@ -7,32 +8,6 @@ function Show({ poems, deletePoems, updatePoems, user }) {
     const { id } = useParams();
     const poem = poems ? poems.find(p => p._id === id) : null;
     const navigate = useNavigate();
-
-
-    const [likes, setLikes] = useState(99);
-    const [isClicked, setIsClicked] = useState(null);
-
-    const likeButton = () => {
-        if (isClicked) {
-            setLikes(likes - 1);
-        } else {
-            setLikes(likes + 1);
-        }
-        setIsClicked(!isClicked)
-    }
-
-    const [dislikes, setDislikes] = useState(0);
-    const [isDisliked, setIsDisliked] = useState(null);
-
-    const dislikeButton = () => {
-        if (isDisliked) {
-            setDislikes(dislikes - 1);
-        } else {
-            setDislikes(dislikes + 1);
-        }
-        setIsDisliked(!isDisliked)
-    }
-
 
     const [editForm, setEditForm] = useState({
         name: '',
