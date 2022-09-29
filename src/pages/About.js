@@ -52,27 +52,25 @@ function About(props) {
 
     return (
         <div >
-            <h1>About Fantasies: Poetry Escape</h1>
-            <h3> Fantasies: Poetry Escape is the brain child of 4 GA Programming Students who,
-                <br /> after much thought realized their shared love of poetry. So, they descided
-                <br /> that they would make a place where Poets can share their work with the world.
-                <br /> as well as a place where they can easily peruse the classics and take
-                <br /> inspiration from the poets of the past.</h3>
+            <h1 className='profileTitle'>About Fantasies: A Poetry Escape</h1>
+            <h3 className='profileBrand'> Fantasies: A Poetry Escape is the brain child of 4 GA Programming Students who, after much thought realized their shared love of poetry. So, they descided that they would make a place where Poets can share their work with the world. as well as a place where they can easily peruse the classics and take inspiration from the poets of the past.</h3>
 
             <div className="profile">
                 <h1>About Our Team</h1>
                 <br />
                 <h3>Ben Allen</h3>
-                <p className="BenP"> The Functionality Genius<img className="Ben" src={require('../assets/Capture3.PNG')} alt="Ben" /></p>
+
+                <p id="BenP"> The Functionality Genius<img className="Ben" src={require('../assets/Capture3.PNG')} alt="Ben" /></p>
                 <br />
                 <h3>Dudley Gamino</h3>
-                <p className="DudleyP"> The Styling Master<img className="Dudley" src={require('../assets/Capture.PNG')} alt="Dudley" /></p>
+                <p id="DudleyP"> The Styling Master<img className="Dudley" src={require('../assets/Capture.PNG')} alt="Dudley" /></p>
                 <br />
                 <h3>Samuel Johnson</h3>
-                <p className="SamuelP"> The Chief Overseer<img className="Samuel" src={require('../assets/Capture4.PNG')} alt="Samuel" /></p>
+                <p id="SamuelP"> The Chief Overseer<img className="Samuel" src={require('../assets/Capture4.PNG')} alt="Samuel" /></p>
                 <br />
                 <h3>Anila Nisar</h3>
-                <p> The Mastermind<img className="Anila" src={require('../assets/Capture2.PNG')} alt="Anila" /></p>
+                <p id="AnilaN"> The Mastermind<img className="Anila" src={require('../assets/Capture2.PNG')} alt="Anila" /></p>
+
 
             </div>
 
