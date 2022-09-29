@@ -3,17 +3,16 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Profile from './components/Profile';
-import ImageSlider from './components/ImageSlider';
-import { SliderData } from './components/SliderData';
-
 import './App.css';
+import PoemDisplay from './components/PoemDisplay'
+import Form from "./components/Form";
+import react from "react";
+
 
 
 function App() {
-  const [user, setUser] = useState(null);
-
+  const [user, setUser] = react.useState(null);
   useEffect(() => {
-
     const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
       setUser(userObjOrNull)
     });
@@ -24,15 +23,41 @@ function App() {
 
   }, []);
 
+
+  const apiKey = "lZ7wrmcIPWDEvZLv";
+  const userID = "10943";
+
+  const [Poema, setPoema] = useState({});
+
+  const getPoema = async (searchterm) => {
+
+    const response = await fetch(
+      `https://www.poemist.com/api/v1/randompoems`
+    );
+
+    const data = await response.json();
+    
+    setPoema(data);
+    console.log(data);
+    console.log(Poema[0].title);
+    console.log(Poema[0].poet.name);
+    console.log(Poema[0].content);  
+  
+  
+  };
+
+
   return (
     <div className="App">
-      {/* <ImageSlider slides={SliderData} />; */}
       <Header user={user} />
       <Main user={user} />
-      <Profile user={user} />
-
+      <Form Poemasearch={getPoema} />
+      <PoemDisplay Poema={Poema} />
     </div>
   );
+  
+  
 }
+
 
 export default App;
