@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import LikeDis from '../components/LikesDis';
 
 
