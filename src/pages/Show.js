@@ -77,26 +77,36 @@ function Show({ poems, deletePoems, updatePoems, user }) {
         ));
 
         return (
-            <section>
+            <section className="PoemsShow">
+                <div className="poem">
+
                 <h1>{poem.name}</h1>
                 <img className='limiter'
                     src={poem.image}
                     alt={poem.name}
                 />
-                <p>{poem.author}</p>
-                <p>{poem.content}</p>
-                <p>{poem.tags}</p>
+                <p className='poemmContentShow'>{poem.content}</p>
+                <p className='author'>{poem.author}</p>
 
-                {poem.createdByUser === user.userName ?
+                {poem.createdByUser === user.uid ?
                     <span>
                         <button onClick={handleEdit}>{isEditing ? 'Cancel' : 'Edit'}</button>
                         <button onClick={handleConfirm}>Delete</button>
                     </span> :
                     <span></span>
-
+                    
                 }
                 <br />
-                <div><LikeDis /></div>
+                <div className="likes">
+                    <div className='thumbs'>
+                <span className="likes-counter">{`${likes}`}</span>
+                <FaThumbsUp className={`like-button ${isClicked && 'liked'}`} onClick={likeButton} />
+                    </div>
+                    <div className='thumbs'>
+                <span className="dislikes-counter">{`${dislikes}`}</span>
+                <FaThumbsDown className={`dislike-button ${isClicked && 'disliked'}`} onClick={dislikeButton} />
+                    </div>
+                </div>
 
                 <br />
                 <form onSubmit={handleComment}>
@@ -112,6 +122,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                         <input type='submit' value='Post Comment' />
                     </label>
                 </form>
+                    </div>
             </section>
         )
     };
