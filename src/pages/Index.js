@@ -30,19 +30,10 @@ function Index(props) {
                     <Link id='PoemId' to={`/poems/${poem._id}`}>
                         {poem.name}
                     </Link>
-<<<<<<< HEAD
-                </h2>
-
-                <img className='limiter'
-                    src={poem.image} alt={poem.name}></img>
-                <p>{poem.title}</p>
-                <p>{poem.content}</p>
-=======
                     <img className='limiter'
                         src={poem.image} alt={poem.name}>
                         </img>
                 </h2>
->>>>>>> 4a788a99f79c58ee9a5b3e7dd8d95defe01501b1
 
                 
 
@@ -116,8 +107,6 @@ function Index(props) {
                         name='content' />
                 </label>
                 <label>
-<<<<<<< HEAD
-=======
                     Image:
                     <input 
                         type='url'
@@ -128,7 +117,6 @@ function Index(props) {
                 </label>
                 <label>
 
->>>>>>> 4a788a99f79c58ee9a5b3e7dd8d95defe01501b1
                     <input
                         // hidden
                         type='text'
