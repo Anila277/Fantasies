@@ -6,7 +6,7 @@ import Profile from './components/Profile';
 import './App.css';
 import PoemDisplay from './components/PoemDisplay'
 import Form from "./components/Form";
-import react from "react"
+import react from "react";
 
 
 
@@ -28,27 +28,37 @@ function App() {
   const apiKey = "lZ7wrmcIPWDEvZLv";
   const userID = "10943";
 
-  const [poema, setPoem] = useState(null);
+  const [poema, setPoema] = react.useState(null);
 
-  const getPoem = async (searchterm) => {
+  const getPoema = async (searchterm) => {
 
     const response = await fetch(
       `https://www.abbreviations.com/services/v2/poetry.php?uid=10943&tokenid=lZ7wrmcIPWDEvZLv&term=${searchterm}&format=json`
     );
 
     const data = await response.json();
-
-    setPoem(data);
     
+
+    setPoema(data);
+    console.log(data[0]);
+    return JSON.stringify(poema);
+
   };
+  function RenderResult() {
+const [poema, getPoema] = useState("*** now loading***");
+
+  useEffect(() => {
+  getPoema("The Raven").then(
+    result => setPoema(result));
+}, []);}
 
   return (
     <div className="App">
 
       <Header user={user} />
       <Main user={user} />
-      <Form poemsearch={getPoem} />
-      <PoemDisplay Poem={poema} />
+      <Form poemasearch={getPoema} />
+      <PoemDisplay Poema={poema} />
     </div>
   );
   

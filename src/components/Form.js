@@ -11,7 +11,7 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.poemsearch(formData.searchterm);
+    props.poemasearch(formData.searchterm);
   };
 
   return (
