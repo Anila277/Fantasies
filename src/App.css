@@ -238,7 +238,7 @@ input{
 #PoemId{
   font-family: 'Dancing Script', cursive;
   font-size: x-large;
-  color:yellow;
+  color:rgb(0, 132, 255);
   
   
 }
@@ -251,7 +251,7 @@ input{
   font-size: xx-large;
   font-weight: 600;
   font-family: 'Dancing Script', cursive;
-  color: yellow;
+  color: rgb(0, 132, 255);
 }
 
 .slider{
@@ -323,7 +323,7 @@ input{
 }
 
 .profile h3 {
-  color: yellow;
+  color: rgb(0, 132, 255);
   font-family: 'Dancing Script', cursive;
   font-size: 32px;
 }
@@ -353,4 +353,12 @@ input{
 
 .thumbs {
   margin-right: 5px;
+}
+
+.searchInputs {
+  display: flex;
+  justify-content: center;
+}
+.searchIcon {
+  top: 10%;
 }
