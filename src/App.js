@@ -28,7 +28,7 @@ function App() {
   const apiKey = "lZ7wrmcIPWDEvZLv";
   const userID = "10943";
 
-  const [poem, setPoem] = react.useState(null);
+  const [poema, setPoem] = useState(null);
 
   const getPoem = async (searchterm) => {
 
@@ -39,6 +39,7 @@ function App() {
     const data = await response.json();
 
     setPoem(data);
+    
   };
 
   return (
@@ -46,10 +47,12 @@ function App() {
 
       <Header user={user} />
       <Main user={user} />
-      <Form Poemsearch={getPoem} />
-      <PoemDisplay Poem={poem} />
+      <Form poemsearch={getPoem} />
+      <PoemDisplay Poem={poema} />
     </div>
   );
+  
 }
+
 
 export default App;

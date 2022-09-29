@@ -1,13 +1,13 @@
 
 import React from "react";
 
-const PoemDisplay = ({ poem }) => {
+const PoemDisplay = ({ poema }) => {
   const loaded = () => {
     return (
       <>
-        <h1>{poem.title}</h1>
-        <h2>{poem.poet}</h2>
-        <h2>{poem.poem}</h2>
+        <h1>{poema.title}</h1>
+        <h2>{poema.poet}</h2>
+        <h2>{poema.poem}</h2>
       </>
     );
   };
@@ -16,7 +16,7 @@ const PoemDisplay = ({ poem }) => {
     return <h1>No Poem to Display</h1>;
   };
 
-  return poem ? loaded() : loading();
+  return poema ? loaded() : loading();
 };
 
 export default PoemDisplay;
