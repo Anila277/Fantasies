@@ -40,7 +40,7 @@ function App() {
     
 
     setPoema(data);
-    console.log(data[0]);
+    console.log(data);
     return JSON.stringify(poema);
 
   };
