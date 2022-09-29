@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Header({ user }) {
     return (
-        <nav className="nav">
+        <nav id='hover' className="nav">
             <Link to="/">
                 <div>Fantasies</div>
             </Link>
@@ -22,10 +22,10 @@ function Header({ user }) {
                                     {user.displayName}
                                 </Link>
                             </div>
-                            <div onClick={logout}>Logout</div>
+                            <div className='loginbtn' onClick={logout}>Logout</div>
                         </>
                         :
-                        <div onClick={login}>Login</div>
+                        <div className='loginbtn' onClick={login}>Login</div>
 
                 }
             </section>

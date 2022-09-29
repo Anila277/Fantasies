@@ -3,10 +3,14 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Profile from './components/Profile';
+import ImageSlider from './components/ImageSlider';
+import { SliderData } from './components/SliderData';
+
 import './App.css';
 import PoemDisplay from './components/PoemDisplay'
 import Form from "./components/Form";
 import react from "react";
+
 
 
 
@@ -54,7 +58,7 @@ const [poema, getPoema] = useState("*** now loading***");
 
   return (
     <div className="App">
-
+      {/* <ImageSlider slides={SliderData} />; */}
       <Header user={user} />
       <Main user={user} />
       <Form poemasearch={getPoema} />

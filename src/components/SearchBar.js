@@ -13,7 +13,7 @@ function SearchBar({ placeholder, data }) {
         setWordEntered(searchWord);
         const newFilter = data.filter((value) => {
             return (
-                value.name.toLowerCase().includes(searchWord.toLowerCase())
+                value.title.toLowerCase().includes(searchWord.toLowerCase())
             )
         });
 
@@ -31,7 +31,9 @@ function SearchBar({ placeholder, data }) {
         <div className="search">
             <div className="searchInputs">
                 <input type="text"
-                    placeholder="Enter A Poem"
+
+                    placeholder={placeholder}
+
                     onChange={handleFilter}
                     value={wordEntered}
                 />
@@ -41,10 +43,16 @@ function SearchBar({ placeholder, data }) {
 
             {filteredData.length !== 0 && (
                 <div className="result">
-                    {filteredData.slice(0, 5).map((value, key) => {
-                        return <a href={"poems/" + value._id}>
-                            <p>{value.name} </p>
-                        </a>
+                    {filteredData.slice(0, 1).map((value, key) => {
+                        return (
+                            <>
+                                <h2>{value.title} </h2>
+                                <h4>By: {value.poet} </h4>
+                                <p>{value.poem} </p>
+                                <h5>Published: {value.published} </h5>
+                            </>
+                        )
+
                     })}
                 </div>
             )}
