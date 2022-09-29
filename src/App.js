@@ -16,19 +16,6 @@ import react from "react";
 
 function App() {
   const [user, setUser] = react.useState(null);
-
-  useEffect(() => {
-
-    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
-      setUser(userObjOrNull)
-    });
-
-    return () => {
-      unsubscribe();
-    };
-
-  }, []);
-
   const apiKey = "lZ7wrmcIPWDEvZLv";
   const userID = "10943";
 
@@ -45,16 +32,18 @@ function App() {
 
     setPoema(data);
     console.log(data);
-    return JSON.stringify(poema);
-
   };
-  function RenderResult() {
-const [poema, getPoema] = useState("*** now loading***");
-
   useEffect(() => {
-  getPoema("The Raven").then(
-    result => setPoema(result));
-}, []);}
+    getPoema()
+    const unsubscribe = auth.onAuthStateChanged((userObjOrNull) => {
+      setUser(userObjOrNull)
+    });
+
+    return () => {
+      unsubscribe();
+    };
+    
+  }, []);
 
   return (
     <div className="App">
@@ -62,7 +51,7 @@ const [poema, getPoema] = useState("*** now loading***");
       <Header user={user} />
       <Main user={user} />
       <Form poemasearch={getPoema} />
-      <PoemDisplay Poema={poema} />
+      <PoemDisplay poema={poema} />
     </div>
   );
   
