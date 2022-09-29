@@ -18,8 +18,11 @@ function Header({ user }) {
                     user ?
                         <>
                             <div>Welcome,
-                                <Link to="/profile">
                                     {user.displayName}
+                            </div>
+                            <div>
+                                <Link to='/profile'>
+                                    Your Poems
                                 </Link>
                             </div>
                             <div className='loginbtn' onClick={logout}>Logout</div>

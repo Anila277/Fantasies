@@ -42,12 +42,16 @@ function LikeDis() {
     };
 
     return (
-        <div>
+        <div className='likes'>
+            <div className='thumbs'>
             <span className="likes-counter">{`${like}`}</span>
             <FaThumbsUp onClick={likeButton} />
-
+            </div>
+            
+            <div className='thumbs'>
             <span className="dislikes-counter">{`${dislike}`}</span>
             <FaThumbsDown onClick={dislikeButton} />
+            </div>
 
         </div>
     );
