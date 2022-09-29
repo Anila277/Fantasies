@@ -13,7 +13,7 @@ function SearchBar({ placeholder, data }) {
         setWordEntered(searchWord);
         const newFilter = data.filter((value) => {
             return (
-                value.name.toLowerCase().includes(searchWord.toLowerCase())
+                value.title.toLowerCase().includes(searchWord.toLowerCase())
             )
         });
 
