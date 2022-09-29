@@ -15,7 +15,7 @@ function Main({ user }) {
     const [poems, setPoems] = useState(null);
     const getDataRef = useRef(null);
 
-    const API_URL = 'http://localhost:4000/api/poems/'
+    const API_URL = 'https://fantasies-a-poetry-escape.herokuapp.com/api/poems/'
 
     const getData = async () => {
 
