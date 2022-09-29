@@ -1,26 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&display=swap');
-*{
-  
+
+* {
+
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   min-height: 100vh;
-  background: linear-gradient(to right top, #1a212de6, #3c2f48 );
+  background: linear-gradient(to right top, #1a212de6, #3c2f48);
 }
 
 
-.mainMain{ 
-  background-image: url(https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80); 
+.mainMain {
+  background-image: url(https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
   width: 80%;
   height: 600px;
   border-radius: 8px;
   background-size: cover;
   margin-left: 150px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,55 +31,60 @@ body{
 }
 
 .glassTest {
-  background: linear-gradient(to right top, #1a2d2a62, #3c2f48a5 );
+  background: linear-gradient(to right top, #1a2d2a62, #3c2f48a5);
   min-height: 50vh;
   width: 60%;
   border-radius: 8px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.732);
   left: 15%;
   color: white;
- 
-}
-.nav,a{
-text-decoration: none;
-color: white;
-cursor: pointer ;
-}
-a:hover{
-  color:rgb(140, 0, 255);
-}
-.loginbtn:hover{
-  color:rgb(140, 0, 255);
+
 }
 
-.icon{
+.nav,
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+a:hover {
+  color: rgb(140, 0, 255);
+}
+
+.loginbtn:hover {
+  color: rgb(140, 0, 255);
+}
+
+.icon {
   background: url(https://www.cppng.com/file/thumb/2020-06/21904-6-open-book-light-thumb.png);
   background-size: cover;
   position: absolute;
-top: 20%;
-left: 14%;
-width: 100px;
-height: 100px;
+  top: 20%;
+  left: 14%;
+  width: 100px;
+  height: 100px;
 }
-.icon2{
+
+.icon2 {
   background: url(https://www.cppng.com/file/thumb/2020-06/21904-6-open-book-light-thumb.png);
   background-size: cover;
   position: absolute;
-top: 10%;
-left: 5%;
-width: 100px;
-height: 100px;
+  top: 10%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
 }
 
-.nav{
-  
+.nav {
+
   width: 8rem;
   height: 20rem;
   border-radius: 8px;
   background-size: cover;
   margin-left: 15%;
-  background: linear-gradient(to right top, #1a2d2a3e, #3c2f4867 );
-  box-shadow: 0 8px 10px rgba(0,0,0,0.5);
+  background: linear-gradient(to right top, #1a2d2a3e, #3c2f4867);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 34%;
   right: 13%;
@@ -87,15 +93,16 @@ height: 100px;
   justify-content: space-around;
   color: white;
 
-   }
-.title{
+}
+
+.title {
   font-family: 'Dancing Script', cursive;
   position: absolute;
   top: 20%;
   color: white;
 }
 
-.addPoem{
+.addPoem {
   height: 3%;
   width: 60%;
   padding: 5%;
@@ -110,7 +117,7 @@ height: 100px;
 }
 
 .Poems {
-  background: linear-gradient(to right top, #1a2d2a27, #3c2f4824 );
+  background: linear-gradient(to right top, #1a2d2a27, #3c2f4824);
   min-height: 50vh;
   width: 50%;
   padding: 1%;
@@ -122,15 +129,17 @@ height: 100px;
   left: 18%;
   margin-top: 20px;
 }
-.poemInput{
+
+.poemInput {
 
   border: none;
   -ms-appearance: none;
   appearance: none;
-  background: rgba(255, 255, 255, 0.268) ;
+  background: rgba(255, 255, 255, 0.268);
 
 }
-input{
+
+input {
   margin: 10px;
   border: none;
   -ms-appearance: none;
@@ -139,6 +148,7 @@ input{
   padding: 5px;
   border-radius: 3px;
 }
+
 .limiter {
   background-size: cover;
   border-radius: 8px;
@@ -148,8 +158,9 @@ input{
   width: 100%;
   max-height: 500px;
 
-  
+
 }
+
 /* .poemmContent
 {
   background: linear-gradient(to right top, #1a2d2a24, #3c2f48a5 );
@@ -160,34 +171,36 @@ input{
   left: 15%;
   color: white;
   display: flex;
-   */ 
-  
+   */
+
 /* /* } */
 
-.PPoem{
+.PPoem {
   height: 10%;
   width: 50%;
   color: black;
 
 
 }
-.author{
+
+.author {
   color: black;
   outline: whitesmoke;
-  
-  
+
+
 }
 
-#PoemId{
-  color:yellow;
-  
+#PoemId {
+  color: yellow;
+
 }
-.poem{
+
+.poem {
   padding: 10px;
 }
 
-.slider{
-  background: linear-gradient(to right top, #1a2d2a62, #3c2f48a5 );
+.slider {
+  background: linear-gradient(to right top, #1a2d2a62, #3c2f48a5);
   height: 50%;
   width: 50%;
   max-height: 466px;
@@ -201,8 +214,9 @@ input{
   right: 25%;
   margin-right: 5%;
 }
-.image{
-  
+
+.image {
+
   max-width: 700px;
   max-height: 466px;
   height: 100%;
