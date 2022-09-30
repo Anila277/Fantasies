@@ -16,6 +16,9 @@ function MainIndex() {
             <div>
                 <SearchBar placeholder="Search A Poem" data={PoemData} />
             </div>
+            <div>
+
+            </div>
         </>
     )
 }
