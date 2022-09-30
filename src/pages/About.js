@@ -59,6 +59,7 @@ function About(props) {
                 <h1>About Our Team</h1>
                 <br />
                 <h3>Ben Allen</h3>
+
                 <p id="BenP"> The Functionality Genius<img className="Ben" src={require('../assets/Capture3.PNG')} alt="Ben" /></p>
                 <br />
                 <h3>Dudley Gamino</h3>
@@ -70,9 +71,10 @@ function About(props) {
                 <h3>Anila Nisar</h3>
                 <p id="AnilaN"> The Mastermind<img className="Anila" src={require('../assets/Capture2.PNG')} alt="Anila" /></p>
 
+
             </div>
 
-            <h2>Reviews</h2>
+            {/* <h2>Reviews</h2>
             <form onSubmit={handleSubmit}>
                 {stars.map((_, star) => {
                     return (
@@ -86,21 +88,21 @@ function About(props) {
                     )
                 })}
 
-                <br />
+                <br /> */}
 
-                <textarea
+                {/* <textarea
                     placeholder='Leave a Review'
                     value={review}
                     onChange={onChangeHandler}
                 />
                 <br />
-                <button onClick={onClickHandler}>Submit</button>
-                <div>
+                <button onClick={onClickHandler}>Submit</button> */}
+                {/* <div>
                     {reviews.map((input) => (
                         <div>{input}</div>
                     ))}
                 </div>
-            </form>
+            </form> */}
 
 
         </div>

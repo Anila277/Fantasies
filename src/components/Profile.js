@@ -106,6 +106,8 @@ function Profile({ user }) {
                         user={user}
                         poems={poems}
                         createPoems={createPoems}
+                        updatePoems={updatePoems}
+                        deletePoems={deletePoems}
                     />
                 } />
             </Routes>
