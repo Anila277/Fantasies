@@ -134,10 +134,10 @@ function Show({ poems, deletePoems, updatePoems, user }) {
     }, [poem]);
 
     return (
-        <section>
+        <section className='content'>
             {poems ? loaded() : loading()}
             {isEditing &&
-                <form onSubmit={handleSubmit}>
+                <form className='editPoem' onSubmit={handleSubmit}>
                     <label>
                         Title:
                         <input
@@ -145,6 +145,7 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                             name='name'
                             value={editForm.name}
                             onChange={handleChange}
+                            placeholder='Title'
 
                         />
                     </label>
@@ -155,15 +156,18 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                             name='author'
                             value={editForm.author}
                             onChange={handleChange}
+                            placeholder='author'
                         />
                     </label>
                     <label>
                         Content:
                         <textarea
+                        className='poemInput'
                             type='text'
                             name='content'
                             value={editForm.content}
                             onChange={handleChange}
+                            placeholder='content'
                         />
                     </label>
                     <label>
