@@ -124,6 +124,27 @@ a:hover {
 
 }
 
+.PoemaStart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  margin-left: 15%;
+}
+
+.PoemButton {
+  margin-left: 15%;
+  margin-top: 10px;
+}
+
+.Poema {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 15% 0 15%;
+}
+
 .editPoem {
   height: 3%;
   width: 60%;

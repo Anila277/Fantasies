@@ -15,7 +15,7 @@ function MainIndex() {
 
   const [Poema, setPoema] = useState({});
 
-  const getPoema = async (searchterm) => {
+  const getPoema = async () => {
 
     const response = await fetch(
       `https://www.poemist.com/api/v1/randompoems`
@@ -24,10 +24,6 @@ function MainIndex() {
     const data = await response.json();
     
     setPoema(data);
-    console.log(data);
-    console.log(Poema[0].title);
-    console.log(Poema[0].poet.name);
-    console.log(Poema[0].content);  
   
   
   };

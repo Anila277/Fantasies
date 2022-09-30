@@ -24,7 +24,7 @@ const Form = (Poema) => {
           onChange={handleChange}
           value={formData.searchterm}
         />
-        <input type="submit" value="Get Poem" />
+        <input className="PoemButton" type="submit" value="Get Poem" />
       </form>
     </div>
   );
