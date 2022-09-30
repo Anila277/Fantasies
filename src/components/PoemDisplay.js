@@ -2,12 +2,12 @@ import React from "react";
 
 const PoemDisplay = ({ Poema }) => {
   const loaded = () => {
-    return ( 
+    return (
       <div>
-    <h1>{(Poema[0].title)}</h1>
-    <h2>{Poema[0].poet.name}</h2>
-    <h2>{Poema[0].content}</h2>
-    </div>
+        <h1>{(Poema[0].title)}</h1>
+        <h2>{Poema[0].poet.name}</h2>
+        <h2>{Poema[0].content}</h2>
+      </div>
 
     );
   };

@@ -25,3 +25,5 @@ yarn-error.log*
 
 /src/components/SearchResult.js
 # /src/components/LikesDis.js
+# src/components/Form.js
+/src/components/PoemDisplay.js
