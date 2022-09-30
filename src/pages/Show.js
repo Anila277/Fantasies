@@ -98,14 +98,16 @@ function Show({ poems, deletePoems, updatePoems, user }) {
                 }
                 <br />
                 <div className="likes">
-                    <div className='thumbs'>
+                    {/* <div className='thumbs'>
                 <span className="likes-counter">{`${likes}`}</span>
                 <FaThumbsUp className={`like-button ${isClicked && 'liked'}`} onClick={likeButton} />
                     </div>
                     <div className='thumbs'>
                 <span className="dislikes-counter">{`${dislikes}`}</span>
                 <FaThumbsDown className={`dislike-button ${isClicked && 'disliked'}`} onClick={dislikeButton} />
-                    </div>
+                    </div> */}
+
+                    <LikeDis />
                 </div>
 
                 <br />
