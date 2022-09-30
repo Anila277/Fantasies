@@ -74,7 +74,7 @@ function About(props) {
 
             </div>
 
-            <h2>Reviews</h2>
+            {/* <h2>Reviews</h2>
             <form onSubmit={handleSubmit}>
                 {stars.map((_, star) => {
                     return (
@@ -88,21 +88,21 @@ function About(props) {
                     )
                 })}
 
-                <br />
+                <br /> */}
 
-                <textarea
+                {/* <textarea
                     placeholder='Leave a Review'
                     value={review}
                     onChange={onChangeHandler}
                 />
                 <br />
-                <button onClick={onClickHandler}>Submit</button>
-                <div>
+                <button onClick={onClickHandler}>Submit</button> */}
+                {/* <div>
                     {reviews.map((input) => (
                         <div>{input}</div>
                     ))}
                 </div>
-            </form>
+            </form> */}
 
 
         </div>
