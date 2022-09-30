@@ -15,15 +15,16 @@ const Form = (Poema) => {
   };
 
   return (
-    <div>
+    <div className="Form">
       <form onSubmit={handleSubmit}>
         <input
+        hidden
           type="text"
           name="searchterm"
           onChange={handleChange}
           value={formData.searchterm}
         />
-        <input type="submit" value="submit" />
+        <input className="PoemButton" type="submit" value="Get Poem" />
       </form>
     </div>
   );
