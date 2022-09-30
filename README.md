@@ -11,6 +11,7 @@
     - Heroku
     - Netlify
     - stands4 API
+    - Vanilla CSS
 
 ## Screenshot
 
