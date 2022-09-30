@@ -38,7 +38,7 @@ function Index(props) {
 
 
                 <p className='poemmContent'> {poem.content}</p>
-                <p className='author'>{poem.author}</p>
+                {/* <p className='author'>{poem.author}</p> */}
             </div>
 
 
