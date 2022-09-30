@@ -10,8 +10,9 @@
     - Netlify
 
 ## Screenshot
- ![intro](src/assets/introshot.png)
-
+![intro](src/assets/introshot.png)
+![index](src/assets/indexshot.png)
+![show](src/assets/showshot.png)
 
 ## Getting Started
 
