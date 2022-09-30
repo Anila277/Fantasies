@@ -60,7 +60,7 @@ function Index(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!newForm.image) delete newForm.image
+        if (!newForm.image) delete newForm.image
         // if(!newForm.name) delete newForm.name
         props.createPoems(newForm);
         setNewForm({
@@ -121,7 +121,7 @@ function Index(props) {
                         placeholder='image'
                     />
                 </label>
-                <label>
+                {/* <label>
 
                     <input
                         hidden
@@ -131,7 +131,7 @@ function Index(props) {
                         name='createdByUser'
 
                     />
-                </label>
+                </label> */}
                 <label>
                     <input
                         type='submit' value='Add Poem' />
