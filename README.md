@@ -10,7 +10,7 @@
     - Netlify
 
 ## Screenshot
- ![intro](./src/assets/Screen Shot 2022-09-29 at 8.40.10 PM.png)
+ ![intro](src/assets/Screen Shot 2022-09-29 at 8.40.10 PM.png)
 
 
 ## Getting Started
