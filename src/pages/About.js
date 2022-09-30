@@ -90,14 +90,14 @@ function About(props) {
 
                 <br /> */}
 
-                {/* <textarea
+            {/* <textarea
                     placeholder='Leave a Review'
                     value={review}
                     onChange={onChangeHandler}
                 />
                 <br />
                 <button onClick={onClickHandler}>Submit</button> */}
-                {/* <div>
+            {/* <div>
                     {reviews.map((input) => (
                         <div>{input}</div>
                     ))}
