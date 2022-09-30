@@ -10,7 +10,7 @@
     - Netlify
 
 ## Screenshot
-    - 
+
 
 ## Getting Started
 
@@ -20,4 +20,8 @@
     
 
 ## Future Enhancements
-    -
+    -Users are able to leave a review/rating for the App
+    -Users are able to search for poems by Author/Tag/User
+    -Users are able to block other users
+    -User be able to message other users
+    -Poets get-together
